@@ -1,5 +1,6 @@
 /**
  * @file It's Benjamin!
+ * @brief The Robot
  */
 
 #include <zephyr/kernel.h>
@@ -8,9 +9,10 @@
 #include <zephyr/device.h>
 #include <zephyr/drivers/pwm.h>
 #include "remote_service/remote.h"
+#include "libs/ultrasonic_hc-sr04.h"
 
 // Logging
-#define LOG_MODULE_NAME app
+#define LOG_MODULE_NAME Benjamin
 LOG_MODULE_REGISTER(LOG_MODULE_NAME);
 
 // GPIO
@@ -18,12 +20,16 @@ LOG_MODULE_REGISTER(LOG_MODULE_NAME);
 #define CONN_STATUS_LED DK_LED2
 #define RUN_LED_BLINK_INTERVAL 1000
 
-// Motor Control
+// Motor Control                TODO: Instead get these values from devicetree
 #define MOTOR_PWM_NS_MAX 2000
 #define MOTOR_PWM_NS_OFF 1500
 #define MOTOR_PWM_NS_MIN 1000
 
-// Declarations
+// Pin definitions
+#define ULTRASONIC_TRIG_PIN 25
+#define ULTRASONIC_ECHO_PIN 26
+
+// Function prototypes
 static struct bt_conn *current_conn;
 void on_connected(struct bt_conn *conn, uint8_t err);
 void on_disconnected(struct bt_conn *conn, uint8_t reason);
@@ -34,15 +40,16 @@ void reset_motors(void);
 // Timers
 K_TIMER_DEFINE(motor_timeout, reset_motors, NULL);  
 
-// Initialise left motor
-static const struct pwm_dt_spec motors_l = PWM_DT_SPEC_GET(DT_NODELABEL(motors_l));
-//static const uint32_t min_pulse_l = DT_PROP(DT_NODELABEL(motors_l), min_pulse);
-//static const uint32_t max_pulse_l = DT_PROP(DT_NODELABEL(motors_l), max_pulse);
+// Put thread definitions here?
 
-// Initialise right motor
+// Initialise devices
+static const struct device *gpio_dev = DEVICE_DT_GET(DT_NODELABEL(gpio0));
+static const struct pwm_dt_spec motors_l = PWM_DT_SPEC_GET(DT_NODELABEL(motors_l));
 static const struct pwm_dt_spec motors_r = PWM_DT_SPEC_GET(DT_NODELABEL(motors_r));
-//static const uint32_t min_pulse_r = DT_PROP(DT_NODELABEL(motors_r), min_pulse);
-//static const uint32_t max_pulse_r = DT_PROP(DT_NODELABEL(motors_r), max_pulse);
+static const struct pwm_dt_spec motor_f = PWM_DT_SPEC_GET(DT_NODELABEL(motor_f));
+static const uint32_t min_pulse_f = DT_PROP(DT_NODELABEL(motor_f), min_pulse);
+static const uint32_t max_pulse_f = DT_PROP(DT_NODELABEL(motor_f), max_pulse);
+
 enum directions{forwards, right, backwards, left}dir;
 
 struct bt_conn_cb bluetooth_callbacks = {
@@ -120,6 +127,7 @@ void update_motors(uint8_t dir_ascii)
         case forwards: 
             motors_l_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
             motors_r_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
+
             break;
         case right:
             motors_l_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
@@ -140,15 +148,17 @@ void update_motors(uint8_t dir_ascii)
 
     // Set motor speeds
     motor_err = pwm_set_pulse_dt(&motors_l, motors_l_pwm_ns);
-    if (motor_err < 0) {
-			LOG_ERR("Error %d: failed to set pulse width of left motors", motor_err);
-			return;
-		}
+    if (motor_err < 0)
+    {
+        LOG_ERR("Error %d: failed to set pulse width of left motors", motor_err);
+        return;
+    }
     motor_err = pwm_set_pulse_dt(&motors_r, motors_r_pwm_ns);
-    if (motor_err < 0) {
-			LOG_ERR("Error %d: failed to set pulse width of right motors", motor_err);
-			return;
-		}
+    if (motor_err < 0) 
+    {
+        LOG_ERR("Error %d: failed to set pulse width of right motors", motor_err);
+        return;
+	}
     LOG_INF("Left motor set to %u us", motors_l_pwm_ns/1000);
     LOG_INF("Right motor set to %u us", motors_r_pwm_ns/1000);
     
@@ -184,13 +194,72 @@ static void config_dk_leds(void)
     return;
 } /* config_dk_leds */
 
+
+void ultrasonic_thread(void)
+{
+    uint32_t dist_mm; 
+    int motor_err;
+    uint32_t motor_f_pwm_ns = PWM_USEC(1500);
+    int dir;
+
+    for (;;)
+    {
+        if (current_conn)
+        {
+            // Move proximity sensor to next position
+            motor_err = pwm_set_pulse_dt(&motor_f, motor_f_pwm_ns);
+            if (motor_err < 0) 
+            {
+                LOG_ERR("Error %d: failed to set pulse width of front motor", motor_err);
+                return;
+            }
+            LOG_INF("Front motor set to %u us", motor_f_pwm_ns/1000);
+
+            // Take sensor reading
+            dist_mm = sense_distance();
+		    LOG_INF("Distance: %u mm", dist_mm);
+
+            // Variable pulse widths        // TODO: MAKE THIS BIT NICER 
+            if (dir == 0)
+            {   
+                if (motor_f_pwm_ns <= min_pulse_f) 
+                {
+            		dir = 1;
+            		motor_f_pwm_ns = min_pulse_f;
+            	} 
+                else
+                {
+				motor_f_pwm_ns -= PWM_USEC(10);
+		 	    }
+            } 
+            else
+            {
+            	motor_f_pwm_ns = motor_f_pwm_ns + PWM_USEC(10);
+            	if (motor_f_pwm_ns >= max_pulse_f) 
+                {
+            		dir = 0;
+            		motor_f_pwm_ns = max_pulse_f;
+            	}
+            }
+        }
+        k_sleep(K_MSEC(25));
+    }
+}
+
+
 void main(void)
 {
+	int16_t ultrasonic_err;
     int err;
     int blink_status = 0;
 	LOG_INF("Hello World! %s\n", CONFIG_BOARD);
 
     config_dk_leds();
+    ultrasonic_err = ultrasonic_init(gpio_dev, ULTRASONIC_TRIG_PIN, ULTRASONIC_ECHO_PIN);
+	if (!ultrasonic_err)
+	{
+		LOG_DBG("Ultrasonic sensor initialisation failed");
+	}
 
     err = bluetooth_init(&bluetooth_callbacks, &remote_callbacks);
     if (err) {
@@ -206,10 +275,15 @@ void main(void)
 		return;
 	}
 
+
     LOG_INF("Running...");
     for (;;) {
 
         dk_set_led(RUN_STATUS_LED, (blink_status++)%2);
         k_sleep(K_MSEC(RUN_LED_BLINK_INTERVAL));
+
     }
 } /* main */
+
+
+K_THREAD_DEFINE(ultrasonic_thread_id, 1024, ultrasonic_thread, NULL, NULL, NULL, 4, 0, 0);

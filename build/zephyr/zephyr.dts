@@ -581,6 +581,9 @@
 			group2 {
 				psels = < 0x170005 >;
 			};
+			group3 {
+				psels = < 0x180006 >;
+			};
 		};
 		pwm0_sleep: pwm0_sleep {
 			phandle = < 0xc >;
@@ -590,7 +593,9 @@
 			};
 			group2 {
 				psels = < 0x170005 >;
-				low-power-enable;
+			};
+			group3 {
+				psels = < 0x180006 >;
 			};
 		};
 		qspi_default: qspi_default {
@@ -768,6 +773,12 @@
 	motors_r: motors_right {
 		compatible = "pwm-servo";
 		pwms = < &pwm0 0x1 0x1312d00 0x0 >;
+		min-pulse = < 0xf4240 >;
+		max-pulse = < 0x1e8480 >;
+	};
+	motor_f: motor_front {
+		compatible = "pwm-servo";
+		pwms = < &pwm0 0x2 0x1312d00 0x0 >;
 		min-pulse = < 0xf4240 >;
 		max-pulse = < 0x1e8480 >;
 	};

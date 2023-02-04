@@ -8,9 +8,9 @@ project(benjamin-robot)
 target_sources(app PRIVATE src/main.c)
 
 # Custom files and folders
-
 target_sources(app PRIVATE
     src/remote_service/remote.c
+    src/libs/ultrasonic_hc-sr04.c
 )
 
 zephyr_library_include_directories(src/remote_service)
