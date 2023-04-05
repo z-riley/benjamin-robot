@@ -452,6 +452,13 @@ C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/pwm/CMakeFil
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/pwm/CMakeFiles/rebuild_cache.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/pwm/CMakeFiles/list_install_components.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/pwm/CMakeFiles/install/strip.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/spi/CMakeFiles/install/local.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/spi/CMakeFiles/install.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/spi/CMakeFiles/edit_cache.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/spi/CMakeFiles/drivers__spi.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/spi/CMakeFiles/rebuild_cache.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/spi/CMakeFiles/list_install_components.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/spi/CMakeFiles/install/strip.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/serial/CMakeFiles/list_install_components.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/serial/CMakeFiles/drivers__serial.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/serial/CMakeFiles/install/local.dir

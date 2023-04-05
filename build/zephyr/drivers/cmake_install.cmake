@@ -89,6 +89,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/spi/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("C:/Users/zac46/Documents/Nordic/benjamin-robot/build/zephyr/drivers/serial/cmake_install.cmake")
 endif()
 

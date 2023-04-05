@@ -1244,6 +1244,20 @@ zephyr_udc0: &usbd {
     } ;
 };
 
+my_spi_master: &spi4 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi4_default>;
+    pinctrl-1 = <&spi4_sleep>;
+    cs-gpios = <&gpio0 28 (1 << 0)>;
+    dot_matrix: dot_matrix@0 {
+        compatible = "st,lis2dw12";
+        reg = <0>;
+        spi-max-frequency = < 0x80000000UL >;
+    };
+
+};
+
 
 &pinctrl {
     pwm0_default: pwm0_default {
@@ -1269,6 +1283,22 @@ zephyr_udc0: &usbd {
 
         };
     };
+    spi4_default: spi4_default {
+        group1 {
+            psels = <((((((0) * 32U) + (31)) & 0x7FU) << 0U) | ((4U & 0xFFFFU) << 16U))>,
+                    <((((((0) * 32U) + (30)) & 0x7FU) << 0U) | ((5U & 0xFFFFU) << 16U))>,
+                    <((((((0) * 32U) + (29)) & 0x7FU) << 0U) | ((6U & 0xFFFFU) << 16U))>;
+        };
+    };
+    spi4_sleep: spi4_sleep {
+        group1 {
+            psels = <((((((0) * 32U) + (31)) & 0x7FU) << 0U) | ((4U & 0xFFFFU) << 16U))>,
+                    <((((((0) * 32U) + (30)) & 0x7FU) << 0U) | ((5U & 0xFFFFU) << 16U))>,
+                    <((((((0) * 32U) + (29)) & 0x7FU) << 0U) | ((6U & 0xFFFFU) << 16U))>;
+            low-power-enable;
+        };
+    };
+
 };
 # 0 "<command-line>" 2
 # 1 "C:/ncs/v2.2.0/zephyr/misc/empty_file.c"
