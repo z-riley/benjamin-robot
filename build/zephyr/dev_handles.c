@@ -16,7 +16,7 @@ __devicehdl_dts_ord_37[] = { DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE
  *    - /soc/peripheral@40000000/spi@a000
  */
 const Z_DECL_ALIGN(device_handle_t) __attribute__((__section__(".__device_handles_pass2")))
-__devicehdl_dts_ord_18[] = { DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, 10, DEVICE_HANDLE_ENDS };
+__devicehdl_dts_ord_18[] = { DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, 11, DEVICE_HANDLE_ENDS };
 
 /* 4 : /entropy_bt_hci:
  */
@@ -31,30 +31,44 @@ __devicehdl_dts_ord_5[] = { DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE_
 /* 6 : /soc/peripheral@40000000/uart@8000:
  */
 const Z_DECL_ALIGN(device_handle_t) __attribute__((__section__(".__device_handles_pass2")))
-__devicehdl_dts_ord_117[] = { DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE_ENDS };
+__devicehdl_dts_ord_116[] = { DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE_ENDS };
 
 /* 7 : /ipc/ipc0:
  * Direct Dependencies:
  *    - /soc/peripheral@40000000/mbox@2a000
  */
 const Z_DECL_ALIGN(device_handle_t) __attribute__((__section__(".__device_handles_pass2")))
-__devicehdl_dts_ord_30[] = { 9, DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE_ENDS };
+__devicehdl_dts_ord_30[] = { 10, DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE_ENDS };
 
-/* 8 : /soc/peripheral@40000000/pwm@21000:
+/* 8 : /soc/peripheral@40000000/i2c@9000:
+ * Supported:
+ *    - /soc/peripheral@40000000/i2c@9000/ssd1306@3c
+ */
+const Z_DECL_ALIGN(device_handle_t) __attribute__((__section__(".__device_handles_pass2")))
+__devicehdl_dts_ord_134[] = { DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, 12, DEVICE_HANDLE_ENDS };
+
+/* 9 : /soc/peripheral@40000000/pwm@21000:
  */
 const Z_DECL_ALIGN(device_handle_t) __attribute__((__section__(".__device_handles_pass2")))
 __devicehdl_dts_ord_13[] = { DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE_ENDS };
 
-/* 9 : /soc/peripheral@40000000/mbox@2a000:
+/* 10 : /soc/peripheral@40000000/mbox@2a000:
  * Supported:
  *    - /ipc/ipc0
  */
 const Z_DECL_ALIGN(device_handle_t) __attribute__((__section__(".__device_handles_pass2")))
 __devicehdl_dts_ord_29[] = { DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, 7, DEVICE_HANDLE_ENDS };
 
-/* 10 : /soc/peripheral@40000000/spi@a000:
+/* 11 : /soc/peripheral@40000000/spi@a000:
  * Direct Dependencies:
  *    - /soc/peripheral@40000000/gpio@842500
  */
 const Z_DECL_ALIGN(device_handle_t) __attribute__((__section__(".__device_handles_pass2")))
-__devicehdl_dts_ord_137[] = { 3, DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE_ENDS };
+__devicehdl_dts_ord_138[] = { 3, DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE_ENDS };
+
+/* 12 : /soc/peripheral@40000000/i2c@9000/ssd1306@3c:
+ * Direct Dependencies:
+ *    - /soc/peripheral@40000000/i2c@9000
+ */
+const Z_DECL_ALIGN(device_handle_t) __attribute__((__section__(".__device_handles_pass2")))
+__devicehdl_dts_ord_135[] = { 8, DEVICE_HANDLE_SEP, DEVICE_HANDLE_SEP, DEVICE_HANDLE_ENDS };

@@ -9,6 +9,8 @@
 #include <zephyr/device.h>
 #include <zephyr/drivers/pwm.h>
 #include <zephyr/drivers/spi.h>
+#include <zephyr/drivers/display.h>
+#include <lvgl.h>
 #include "remote_service/remote.h"
 #include "libs/ultrasonic_hc-sr04.h"
 #include "helpers.h"
@@ -29,15 +31,23 @@ LOG_MODULE_REGISTER(LOG_MODULE_NAME);
 // SPI
 #define MY_SPI_MASTER DT_NODELABEL(my_spi_master)
 
+// OLED Display
+#define MY_DISP_HOR_RES 128
+#define MY_DISP_VER_RES 64
+
 // Function prototypes
 static struct bt_conn *current_conn;
-void on_connected(struct bt_conn *conn, uint8_t error);
-void on_disconnected(struct bt_conn *conn, uint8_t reason);
-void on_data_received(struct bt_conn *conn, const uint8_t *const data, uint16_t len);
-void update_motors(uint8_t dir_ascii);
-void reset_motors(struct k_timer *timer);
-void dot_matrix_init();
-void dot_matrix_write(uint8_t addr, uint8_t data);
+static void on_connected(struct bt_conn *conn, uint8_t error);
+static void on_disconnected(struct bt_conn *conn, uint8_t reason);
+static void on_data_received(struct bt_conn *conn, const uint8_t *const data, uint16_t len);
+static void update_motors(uint8_t dir_ascii);
+static void reset_motors(struct k_timer *timer);
+static void config_dk_leds(void);
+static void i2c_init(void);
+static void spi_init(void);
+static void oled_init(void);
+static void dot_matrix_init();
+static void dot_matrix_write(uint8_t addr, uint8_t data);
 
 // Timers
 K_TIMER_DEFINE(motor_timeout, reset_motors, NULL);  
@@ -49,18 +59,18 @@ static const struct pwm_dt_spec motors_r = PWM_DT_SPEC_GET(DT_NODELABEL(motors_r
 static const struct pwm_dt_spec motor_f = PWM_DT_SPEC_GET(DT_NODELABEL(motor_f));
 static const uint32_t MIN_PULSE_F = DT_PROP(DT_NODELABEL(motor_f), min_pulse);
 static const uint32_t MAX_PULSE_F = DT_PROP(DT_NODELABEL(motor_f), max_pulse);
-const struct device *spi_dev;
+static const struct device *spi_dev;
+static const struct device *oled_dev;
 
 // Global variable declarations
 enum directions{forwards, right, backwards, left}dir;
-static bool b_dot_matrix_ok = 0;
 
+static bool b_dot_matrix_ok = 0;
 
 struct spi_cs_control dot_matrix_cs = {
 	.gpio = SPI_CS_GPIOS_DT_SPEC_GET(DT_NODELABEL(dot_matrix)),
 	.delay = 0,
 };
-
 
 static const struct spi_config spi_cfg = {
 	.operation = SPI_WORD_SET(8) | SPI_TRANSFER_MSB | SPI_MODE_CPHA |  SPI_MODE_CPOL, 
@@ -69,20 +79,17 @@ static const struct spi_config spi_cfg = {
 	.cs = &dot_matrix_cs,
 };
 
-
 struct bt_conn_cb bluetooth_callbacks = {
 	.connected 		= on_connected,
 	.disconnected 	= on_disconnected,
 };
 
-
 struct bt_remote_service_cb remote_callbacks = {
     .data_received = on_data_received,
 }; 
 
-
 /* Callbacks */
-void on_connected(struct bt_conn *conn, uint8_t error)
+static void on_connected(struct bt_conn *conn, uint8_t error)
 {
 	if(error) {
 		LOG_ERR("connection err: %d", error);
@@ -94,7 +101,7 @@ void on_connected(struct bt_conn *conn, uint8_t error)
 } /* on_connected */
 
 
-void on_disconnected(struct bt_conn *conn, uint8_t reason)
+static void on_disconnected(struct bt_conn *conn, uint8_t reason)
 {
 	LOG_INF("Disconnected (reason: %d)", reason);
 	dk_set_led_off(CONN_STATUS_LED);
@@ -105,7 +112,7 @@ void on_disconnected(struct bt_conn *conn, uint8_t reason)
 } /* on_disconnected */
 
 
-void on_data_received(struct bt_conn *conn, const uint8_t *const data, uint16_t len)
+static void on_data_received(struct bt_conn *conn, const uint8_t *const data, uint16_t len)
 {
     uint8_t temp_str[len+1];
     memcpy(temp_str, data, len);
@@ -123,7 +130,7 @@ void on_data_received(struct bt_conn *conn, const uint8_t *const data, uint16_t 
 } /* on_data_received */
 
 
-void update_motors(uint8_t dir_ascii)
+static void update_motors(uint8_t dir_ascii)
 {
     uint16_t error;
     uint32_t motors_l_pwm_ns = 1500;
@@ -181,11 +188,10 @@ void update_motors(uint8_t dir_ascii)
     LOG_INF("Left motor set to %u us", motors_l_pwm_ns/1000);
     LOG_INF("Right motor set to %u us", motors_r_pwm_ns/1000);
     
-    return;
 } /* update_motors */
 
 
-void reset_motors(struct k_timer *timer)
+static void reset_motors(struct k_timer *timer)
 {
     ARG_UNUSED(timer);
     uint16_t error;
@@ -200,7 +206,7 @@ void reset_motors(struct k_timer *timer)
 			return;
 		}
     LOG_INF("Motors turned off (1500 us)");
-    return;
+
 } /* reset_motors */
 
 
@@ -211,9 +217,17 @@ static void config_dk_leds(void)
     if (error) {
         LOG_ERR("Couldn't init LEDS (error %d)", error);
     }
-    return;
+
 } /* config_dk_leds */
 
+static void i2c_init(void)
+{
+    oled_dev = DEVICE_DT_GET(DT_NODELABEL(ssd1306));
+    if(!device_is_ready(oled_dev)) 
+    {
+		LOG_ERR("SSD1306 display device not ready!\n");
+	}
+} /* i2c_init */
 
 static void spi_init(void)
 {
@@ -226,9 +240,24 @@ static void spi_init(void)
     {
 		LOG_ERR("SPI master chip select device not ready!\n");
 	}
-    return;    
-}
+} /* spi_init */
 
+static void oled_init(void)
+{
+    // Create draw buffer
+	static lv_disp_draw_buf_t draw_buf;
+	static lv_color_t buf1[MY_DISP_HOR_RES * MY_DISP_VER_RES];
+	lv_disp_draw_buf_init(&draw_buf, buf1, NULL, MY_DISP_VER_RES * MY_DISP_VER_RES);
+
+    // Create text label
+    lv_obj_t *hello_label;
+    hello_label = lv_label_create(lv_scr_act());
+	lv_label_set_text(hello_label, "Kill me");
+	lv_obj_align(hello_label, LV_ALIGN_CENTER, 0, 24);
+    display_blanking_off(oled_dev);
+    lv_task_handler();
+
+} /* oled_init */
 
 void ultrasonic_thread(void)
 {
@@ -304,8 +333,7 @@ void ultrasonic_thread(void)
     }
 }
 
-
-void dot_matrix_init()
+static void dot_matrix_init()
 {
     dot_matrix_write(0x0C, 0x01);   // Shutdown register
     dot_matrix_write(0x0A, 0x00);   // Intensity register
@@ -313,8 +341,7 @@ void dot_matrix_init()
     dot_matrix_write(0x09, 0x00);   // Decode-mode register
 }
 
-
-void dot_matrix_write(uint8_t addr, uint8_t data)
+static void dot_matrix_write(uint8_t addr, uint8_t data)
 {
 	static uint8_t tx_buffer[2];
 	const struct spi_buf tx_buf = {
@@ -342,7 +369,6 @@ void dot_matrix_write(uint8_t addr, uint8_t data)
 	return;
 } /* dot_matrix_write */
 
-
 void main(void)
 {
     int16_t error;
@@ -356,7 +382,9 @@ void main(void)
 		LOG_DBG("Ultrasonic sensor initialisation failed");
 	}
 
+    i2c_init();
     spi_init();
+    oled_init();
 
     error = bluetooth_init(&bluetooth_callbacks, &remote_callbacks);
     if (error) 
@@ -377,12 +405,11 @@ void main(void)
 
     LOG_INF("Running...");
     for (;;) {
-
         dk_set_led(RUN_STATUS_LED, (blink_status++)%2);
         k_sleep(K_MSEC(RUN_LED_BLINK_INTERVAL));
-
     }
+
 } /* main */
 
-
+// Threads
 K_THREAD_DEFINE(ultrasonic_thread_id, 1024, ultrasonic_thread, NULL, NULL, NULL, 4, 0, 0);

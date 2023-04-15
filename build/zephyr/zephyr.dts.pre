@@ -1221,6 +1221,38 @@ zephyr_udc0: &usbd {
  };
 };
 # 0 "<command-line>" 2
+# 1 "C:/ncs/v2.2.0/zephyr/boards/shields/ssd1306/ssd1306_128x32.overlay" 1
+
+
+
+
+
+
+/ {
+ chosen {
+  zephyr,display = &ssd1306_ssd1306_128x32;
+ };
+};
+
+&arduino_i2c {
+ status = "okay";
+
+ ssd1306_ssd1306_128x32: ssd1306@3c {
+  compatible = "solomon,ssd1306fb";
+  reg = <0x3c>;
+  width = <128>;
+  height = <32>;
+  segment-offset = <0>;
+  page-offset = <0>;
+  display-offset = <0>;
+  multiplex-ratio = <31>;
+  segment-remap;
+  com-invdir;
+  com-sequential;
+  prechargep = <0x22>;
+ };
+};
+# 0 "<command-line>" 2
 # 1 "c:/Users/zac46/Documents/Nordic/benjamin-robot/nrf5340dk_nrf5340_cpuapp_ns.overlay" 1
 # 13 "c:/Users/zac46/Documents/Nordic/benjamin-robot/nrf5340dk_nrf5340_cpuapp_ns.overlay"
 / {
@@ -1258,6 +1290,28 @@ my_spi_master: &spi4 {
 
 };
 
+arduino_i2c: &i2c1 {
+ compatible = "nordic,nrf-twim";
+ status = "okay";
+ clock-frequency = <100000>;
+    zephyr,concat-buf-size = <4096>;
+
+    ssd1306: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <16>;
+        multiplex-ratio = <63>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
+    };
+};
+
 
 &pinctrl {
     pwm0_default: pwm0_default {
@@ -1282,6 +1336,20 @@ my_spi_master: &spi4 {
             psels = <((((((0) * 32U) + (6)) & 0x7FU) << 0U) | ((24U & 0xFFFFU) << 16U))>;
 
         };
+    };
+    i2c1_default: i2c1_default {
+        group1 {
+            psels = <((((((1) * 32U) + (2)) & 0x7FU) << 0U) | ((12U & 0xFFFFU) << 16U))>,
+                    <((((((1) * 32U) + (3)) & 0x7FU) << 0U) | ((11U & 0xFFFFU) << 16U))>;
+        };
+    };
+
+    i2c1_sleep: i2c1_sleep {
+        group1 {
+            psels = <((((((1) * 32U) + (2)) & 0x7FU) << 0U) | ((12U & 0xFFFFU) << 16U))>,
+                    <((((((1) * 32U) + (3)) & 0x7FU) << 0U) | ((11U & 0xFFFFU) << 16U))>;
+                    low-power-enable;
+            };
     };
     spi4_default: spi4_default {
         group1 {

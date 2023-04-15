@@ -5,4 +5,5 @@ set(CACHED_CONF_FILE "c:/Users/zac46/Documents/Nordic/benjamin-robot/prj.conf" C
 set(DTC_OVERLAY_FILE "c:/Users/zac46/Documents/Nordic/benjamin-robot/nrf5340dk_nrf5340_cpuapp_ns.overlay" CACHE INTERNAL "NCS child image controlled")
 set(DTC_OVERLAY_FILE "c:/Users/zac46/Documents/Nordic/benjamin-robot/nrf5340dk_nrf5340_cpuapp_ns.overlay" CACHE INTERNAL "NCS child image controlled")
 set(NCS_TOOLCHAIN_VERSION "NONE" CACHE INTERNAL "NCS child image controlled")
+set(SHIELD "ssd1306_128x32" CACHE INTERNAL "NCS child image controlled")
 set(WEST_PYTHON "c:\ncs\toolchains\v2.2.0\opt\bin\python.exe" CACHE INTERNAL "NCS child image controlled")
