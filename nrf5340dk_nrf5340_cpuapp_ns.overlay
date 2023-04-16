@@ -10,6 +10,7 @@
 
 // For more help, browse the DeviceTree documentation at https://docs.zephyrproject.org/latest/guides/dts/index.html
 // You can also visit the nRF DeviceTree extension documentation at https://nrfconnect.github.io/vscode-nrf-connect/devicetree/nrfdevicetree.html
+
 / {
     motors_l: motors_left {
         compatible = "pwm-servo";
@@ -36,7 +37,7 @@ my_spi_master: &spi4 {
     status = "okay";
     pinctrl-0 = <&spi4_default>;
     pinctrl-1 = <&spi4_sleep>;
-    cs-gpios = <&gpio0 28 GPIO_ACTIVE_LOW>;         // Dot matrix
+    cs-gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;         // Dot matrix
     dot_matrix: dot_matrix@0 {
         compatible = "st,lis2dw12";
         reg = <0>;
@@ -66,7 +67,6 @@ arduino_i2c: &i2c1 {
         prechargep = <0x22>;    // default = 0x22
     };
 };
-
 
 &pinctrl {
     pwm0_default: pwm0_default {

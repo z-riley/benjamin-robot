@@ -186,7 +186,7 @@
 				rx-delay-supported;
 				rx-delay = < 0x2 >;
 				status = "okay";
-				cs-gpios = < &gpio0 0x1c 0x1 >;
+				cs-gpios = < &gpio0 0xc 0x1 >;
 				pinctrl-0 = < &spi4_default >;
 				pinctrl-1 = < &spi4_sleep >;
 				pinctrl-names = "default", "sleep";

@@ -8,15 +8,15 @@
 #include <dk_buttons_and_leds.h>
 #include <zephyr/device.h>
 #include <zephyr/drivers/pwm.h>
-#include <zephyr/drivers/spi.h>
 #include <zephyr/drivers/display.h>
 #include <lvgl.h>
 #include "remote_service/remote.h"
 #include "libs/ultrasonic_hc-sr04.h"
+#include "dot_matrix/dot_matrix.h"
 #include "helpers.h"
 
 // Logging
-#define LOG_MODULE_NAME Benjamin
+#define LOG_MODULE_NAME Benjamin_main
 LOG_MODULE_REGISTER(LOG_MODULE_NAME);
 
 // GPIO
@@ -27,9 +27,6 @@ LOG_MODULE_REGISTER(LOG_MODULE_NAME);
 // Pin definitions
 #define ULTRASONIC_TRIG_PIN 25
 #define ULTRASONIC_ECHO_PIN 26
-
-// SPI
-#define MY_SPI_MASTER DT_NODELABEL(my_spi_master)
 
 // OLED Display
 #define MY_DISP_HOR_RES 128
@@ -44,10 +41,7 @@ static void update_motors(uint8_t dir_ascii);
 static void reset_motors(struct k_timer *timer);
 static void config_dk_leds(void);
 static void i2c_init(void);
-static void spi_init(void);
 static void oled_init(void);
-static void dot_matrix_init();
-static void dot_matrix_write(uint8_t addr, uint8_t data);
 
 // Timers
 K_TIMER_DEFINE(motor_timeout, reset_motors, NULL);  
@@ -59,25 +53,16 @@ static const struct pwm_dt_spec motors_r = PWM_DT_SPEC_GET(DT_NODELABEL(motors_r
 static const struct pwm_dt_spec motor_f = PWM_DT_SPEC_GET(DT_NODELABEL(motor_f));
 static const uint32_t MIN_PULSE_F = DT_PROP(DT_NODELABEL(motor_f), min_pulse);
 static const uint32_t MAX_PULSE_F = DT_PROP(DT_NODELABEL(motor_f), max_pulse);
-static const struct device *spi_dev;
 static const struct device *oled_dev;
 
-// Global variable declarations
-enum directions{forwards, right, backwards, left}dir;
-
-static bool b_dot_matrix_ok = 0;
-
-struct spi_cs_control dot_matrix_cs = {
-	.gpio = SPI_CS_GPIOS_DT_SPEC_GET(DT_NODELABEL(dot_matrix)),
-	.delay = 0,
-};
-
-static const struct spi_config spi_cfg = {
-	.operation = SPI_WORD_SET(8) | SPI_TRANSFER_MSB | SPI_MODE_CPHA |  SPI_MODE_CPOL, 
-	.frequency = 4000000,
-	.slave = 0,
-	.cs = &dot_matrix_cs,
-};
+// Variable declarations
+typedef enum
+{
+    FORWARDS_E,
+    RIGHT_E,
+    BACKWARDS_E,
+    LEFT_E
+} robot_dir_t;
 
 struct bt_conn_cb bluetooth_callbacks = {
 	.connected 		= on_connected,
@@ -100,7 +85,6 @@ static void on_connected(struct bt_conn *conn, uint8_t error)
 	dk_set_led_on(CONN_STATUS_LED);
 } /* on_connected */
 
-
 static void on_disconnected(struct bt_conn *conn, uint8_t reason)
 {
 	LOG_INF("Disconnected (reason: %d)", reason);
@@ -110,7 +94,6 @@ static void on_disconnected(struct bt_conn *conn, uint8_t reason)
 		current_conn = NULL;
 	}
 } /* on_disconnected */
-
 
 static void on_data_received(struct bt_conn *conn, const uint8_t *const data, uint16_t len)
 {
@@ -129,41 +112,40 @@ static void on_data_received(struct bt_conn *conn, const uint8_t *const data, ui
     
 } /* on_data_received */
 
-
 static void update_motors(uint8_t dir_ascii)
 {
     uint16_t error;
+    robot_dir_t dir;
     uint32_t motors_l_pwm_ns = 1500;
     uint32_t motors_r_pwm_ns = 1500;
     const uint32_t ROBOT_SPEED = 400;       // Max 500
     
    
-    uint8_t dir = dir_ascii - '0';          // Convert to uint8
+    dir = (uint8_t)(dir_ascii - '0');      // Black magic convert to numeric
     LOG_DBG("ASCII: %u", dir_ascii);
     LOG_DBG("Int: %u", dir);
 
     /* Motor PWM->Speed Reference:
-    Max foward = 2000 us
-    Max reverse = 1000 us
-    Stop = 1500 us. Dead band [1480-1520] us
-    */
+        Max foward = 2000 us
+        Max reverse = 1000 us
+        Stop = 1500 us. Dead band [1480-1520] us */
 
     switch(dir)
     {
-        case forwards: 
+        case FORWARDS_E: 
             motors_l_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
             motors_r_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
 
             break;
-        case right:
+        case RIGHT_E:
             motors_l_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
             motors_r_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
             break;
-        case backwards:
+        case BACKWARDS_E:
             motors_l_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
             motors_r_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
             break;
-        case left:
+        case LEFT_E:
             motors_l_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
             motors_r_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
             break;
@@ -189,7 +171,6 @@ static void update_motors(uint8_t dir_ascii)
     LOG_INF("Right motor set to %u us", motors_r_pwm_ns/1000);
     
 } /* update_motors */
-
 
 static void reset_motors(struct k_timer *timer)
 {
@@ -229,19 +210,6 @@ static void i2c_init(void)
 	}
 } /* i2c_init */
 
-static void spi_init(void)
-{
-	spi_dev = DEVICE_DT_GET(MY_SPI_MASTER);
-	if(!device_is_ready(spi_dev)) 
-    {
-		LOG_ERR("SPI master device not ready!\n");
-	}
-	if(!device_is_ready(dot_matrix_cs.gpio.port))
-    {
-		LOG_ERR("SPI master chip select device not ready!\n");
-	}
-} /* spi_init */
-
 static void oled_init(void)
 {
     // Create draw buffer
@@ -252,7 +220,7 @@ static void oled_init(void)
     // Create text label
     lv_obj_t *hello_label;
     hello_label = lv_label_create(lv_scr_act());
-	lv_label_set_text(hello_label, "Kill me");
+	lv_label_set_text(hello_label, "Hi I'm Benjamin");
 	lv_obj_align(hello_label, LV_ALIGN_CENTER, 0, 24);
     display_blanking_off(oled_dev);
     lv_task_handler();
@@ -272,14 +240,7 @@ void ultrasonic_thread(void)
     for (;;)
     {
         if (1) //if (current_conn) USUAL
-        {   
-            // Initiliase dot matrix 
-            if (!b_dot_matrix_ok)
-            {
-                dot_matrix_init();
-                b_dot_matrix_ok = 1;
-            }
-            
+        {               
             // Move proximity sensor to next position
             motor_err = pwm_set_pulse_dt(&motor_f, motor_f_pwm_ns);
             if (motor_err < 0) 
@@ -333,42 +294,6 @@ void ultrasonic_thread(void)
     }
 }
 
-static void dot_matrix_init()
-{
-    dot_matrix_write(0x0C, 0x01);   // Shutdown register
-    dot_matrix_write(0x0A, 0x00);   // Intensity register
-    dot_matrix_write(0x0B, 0x07);   // Scan limit register
-    dot_matrix_write(0x09, 0x00);   // Decode-mode register
-}
-
-static void dot_matrix_write(uint8_t addr, uint8_t data)
-{
-	static uint8_t tx_buffer[2];
-	const struct spi_buf tx_buf = {
-		.buf = tx_buffer,
-		.len = sizeof(tx_buffer)
-	};
-	const struct spi_buf_set tx = {
-		.buffers = &tx_buf,
-		.count = 1
-	};
-
-    tx_buffer[0] = addr;
-    tx_buffer[1] = data;
-    
-    LOG_DBG("SPI TX: 0x%.2x, 0x%.2x\n", tx_buffer[0], tx_buffer[1]);
-	
-	// Start transaction
-    int16_t error;
-	error = spi_write(spi_dev, &spi_cfg, &tx);
-    if(error != 0)
-    {
-		LOG_ERR("SPI write error: %i\n", error);
-		return;
-	}
-	return;
-} /* dot_matrix_write */
-
 void main(void)
 {
     int16_t error;
@@ -385,6 +310,7 @@ void main(void)
     i2c_init();
     spi_init();
     oled_init();
+    dot_matrix_init();
 
     error = bluetooth_init(&bluetooth_callbacks, &remote_callbacks);
     if (error) 

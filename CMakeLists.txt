@@ -12,6 +12,7 @@ target_sources(app PRIVATE src/main.c)
 target_sources(app PRIVATE
     src/remote_service/remote.c
     src/libs/ultrasonic_hc-sr04.c
+    src/dot_matrix/dot_matrix.c
     src/helpers.c
 )
 

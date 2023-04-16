@@ -1254,7 +1254,7 @@ zephyr_udc0: &usbd {
 };
 # 0 "<command-line>" 2
 # 1 "c:/Users/zac46/Documents/Nordic/benjamin-robot/nrf5340dk_nrf5340_cpuapp_ns.overlay" 1
-# 13 "c:/Users/zac46/Documents/Nordic/benjamin-robot/nrf5340dk_nrf5340_cpuapp_ns.overlay"
+# 14 "c:/Users/zac46/Documents/Nordic/benjamin-robot/nrf5340dk_nrf5340_cpuapp_ns.overlay"
 / {
     motors_l: motors_left {
         compatible = "pwm-servo";
@@ -1281,7 +1281,7 @@ my_spi_master: &spi4 {
     status = "okay";
     pinctrl-0 = <&spi4_default>;
     pinctrl-1 = <&spi4_sleep>;
-    cs-gpios = <&gpio0 28 (1 << 0)>;
+    cs-gpios = <&gpio0 12 (1 << 0)>;
     dot_matrix: dot_matrix@0 {
         compatible = "st,lis2dw12";
         reg = <0>;
@@ -1311,7 +1311,6 @@ arduino_i2c: &i2c1 {
         prechargep = <0x22>;
     };
 };
-
 
 &pinctrl {
     pwm0_default: pwm0_default {

@@ -23,7 +23,6 @@
  */
 int32_t ultrasonic_init(const struct device *port, gpio_pin_t pin_trig, gpio_pin_t pin_echo);
 
-
 /**
  * @brief Measure proximity between HC-SR04 and nearest object in sensing range. 
  *
