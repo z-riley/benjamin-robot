@@ -1,20 +1,19 @@
-
-
+"""
+BLE Controller Application for Benjamin the Robot
+"""
 import sys
 import enum
 import simplepyble
 import numpy as np
-from PyQt6.QtCore import QSize, Qt, QRectF
-from PyQt6.QtCore import QTimer
-from PyQt6.QtWidgets import QApplication, QWidget, QLineEdit, QCheckBox, QVBoxLayout, QHBoxLayout, QGridLayout, QPushButton, QLabel, QMessageBox
-from PyQt6.QtWidgets import QGraphicsScene
-from PyQt6.QtGui import QShortcut, QKeySequence, QPainter, QPixmap
+from PyQt6.QtCore import Qt, QRectF, QTimer
+from PyQt6.QtWidgets import QApplication, QWidget, QCheckBox, QVBoxLayout, QHBoxLayout, QGridLayout, QPushButton, QLabel
+from PyQt6.QtGui import QPainter
 
 
 WINDOW_WIDTH = 400
 WINDOW_HEIGHT = 400
 
-ADDRESS = "f7:6d:e3:5f:cb:f9"
+MAC_ADDRESS = "f7:6d:e3:5f:cb:f9"
 MOVEMENT_SERVICE = "e9ea0001-e19b-482d-9293-c7907585fc48"
 MOVEMENT_CHARACTERISTIC = "e9ea0003-e19b-482d-9293-c7907585fc48"  
 TRANSMIT_MOVE_COMMAND_PERIOD_MS = 80
@@ -25,8 +24,8 @@ DIRECTION_CONTROLS = {"forwards": Qt.Key.Key_W,
                       "backwards": Qt.Key.Key_S,
                       "right": Qt.Key.Key_D}
 
-
 class RobotDir(enum.Enum):
+    """ Directional commands to send to robot """
     e_none = 0
     e_north = 1
     e_northeast = 2
@@ -37,8 +36,8 @@ class RobotDir(enum.Enum):
     e_west = 7
     e_northwest = 8
 
-
 class BLEStatus(enum.Enum):
+    """ BLE connection status """
     e_unknown = 0
     e_connecting = 1
     e_connected = 2
@@ -250,7 +249,7 @@ class BLETransceiver():
 
         def scan_found_cb(self, peripheral):
             self.peripheral = peripheral                
-            if self.peripheral.address() == ADDRESS:
+            if self.peripheral.address() == MAC_ADDRESS:
                 print("Found Benjamin")
                 self.update_connection_status(BLEStatus.e_connecting)
                 self.adapter.scan_stop()
