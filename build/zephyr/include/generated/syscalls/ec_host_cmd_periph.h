@@ -34,7 +34,7 @@ static inline int ec_host_cmd_periph_init(const struct device * dev, struct ec_h
 	return z_impl_ec_host_cmd_periph_init(dev, rx_ctx);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ec_host_cmd_periph_init(dev, rx_ctx) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EC_HOST_CMD_PERIPH_INIT, ec_host_cmd_periph_init, dev, rx_ctx); 	retval = ec_host_cmd_periph_init(dev, rx_ctx); 	sys_port_trace_syscall_exit(K_SYSCALL_EC_HOST_CMD_PERIPH_INIT, ec_host_cmd_periph_init, dev, rx_ctx, retval); 	retval; })
@@ -58,7 +58,7 @@ static inline int ec_host_cmd_periph_send(const struct device * dev, const struc
 	return z_impl_ec_host_cmd_periph_send(dev, tx_buf);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ec_host_cmd_periph_send(dev, tx_buf) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EC_HOST_CMD_PERIPH_SEND, ec_host_cmd_periph_send, dev, tx_buf); 	retval = ec_host_cmd_periph_send(dev, tx_buf); 	sys_port_trace_syscall_exit(K_SYSCALL_EC_HOST_CMD_PERIPH_SEND, ec_host_cmd_periph_send, dev, tx_buf, retval); 	retval; })

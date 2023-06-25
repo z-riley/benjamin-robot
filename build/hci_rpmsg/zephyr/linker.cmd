@@ -3,7 +3,7 @@ _region_min_align = 32;
 MEMORY
     {
     FLASH (rx) : ORIGIN = 0x1000000, LENGTH = 0x40000
-    RAM (wx) : ORIGIN = 0x21000000, LENGTH = 0x10000
+    SRAM (wx) : ORIGIN = 0x21000000, LENGTH = 0x10000
     SRAM1 : ORIGIN = 553648128, LENGTH = 65536
     IDT_LIST (wx) : ORIGIN = 0xFFFFF7FF, LENGTH = 2K
     }
@@ -65,7 +65,6 @@ KEEP(*(.gnu.linkonce.irq_vector_table*))
  *(".TEXT.*")
  *(.gnu.linkonce.t.*)
  *(.glue_7t) *(.glue_7) *(.vfp11_veneer) *(.v4_bx)
- . = ALIGN(4);
  } > FLASH
  __text_region_end = .;
  .ARM.exidx :
@@ -78,7 +77,6 @@ KEEP(*(.gnu.linkonce.irq_vector_table*))
  initlevel :
  {
   __init_start = .;
-  __init_EARLY_start = .; KEEP(*(SORT(.z_init_EARLY[0-9]_*))); KEEP(*(SORT(.z_init_EARLY[1-9][0-9]_*)));
   __init_PRE_KERNEL_1_start = .; KEEP(*(SORT(.z_init_PRE_KERNEL_1[0-9]_*))); KEEP(*(SORT(.z_init_PRE_KERNEL_1[1-9][0-9]_*)));
   __init_PRE_KERNEL_2_start = .; KEEP(*(SORT(.z_init_PRE_KERNEL_2[0-9]_*))); KEEP(*(SORT(.z_init_PRE_KERNEL_2[1-9][0-9]_*)));
   __init_POST_KERNEL_start = .; KEEP(*(SORT(.z_init_POST_KERNEL[0-9]_*))); KEEP(*(SORT(.z_init_POST_KERNEL[1-9][0-9]_*)));
@@ -89,7 +87,6 @@ KEEP(*(.gnu.linkonce.irq_vector_table*))
  devices :
  {
   __device_start = .;
-  __device_EARLY_start = .; KEEP(*(SORT(.z_device_EARLY[0-9]_*))); KEEP(*(SORT(.z_device_EARLY[1-9][0-9]_*)));
   __device_PRE_KERNEL_1_start = .; KEEP(*(SORT(.z_device_PRE_KERNEL_1[0-9]_*))); KEEP(*(SORT(.z_device_PRE_KERNEL_1[1-9][0-9]_*)));
   __device_PRE_KERNEL_2_start = .; KEEP(*(SORT(.z_device_PRE_KERNEL_2[0-9]_*))); KEEP(*(SORT(.z_device_PRE_KERNEL_2[1-9][0-9]_*)));
   __device_POST_KERNEL_start = .; KEEP(*(SORT(.z_device_POST_KERNEL[0-9]_*))); KEEP(*(SORT(.z_device_POST_KERNEL[1-9][0-9]_*)));
@@ -114,7 +111,6 @@ KEEP(*(.gnu.linkonce.irq_vector_table*))
   __app_shmem_regions_end = .;
  } > FLASH
  k_p4wq_initparam_area : SUBALIGN(4) { _k_p4wq_initparam_list_start = .; KEEP(*(SORT_BY_NAME(._k_p4wq_initparam.static.*))); _k_p4wq_initparam_list_end = .; } > FLASH
- _static_thread_data_area : SUBALIGN(4) { __static_thread_data_list_start = .; KEEP(*(SORT_BY_NAME(.__static_thread_data.static.*))); __static_thread_data_list_end = .; } > FLASH
  device_handles : ALIGN_WITH_INPUT
  {
 __device_handles_start = .;
@@ -123,7 +119,6 @@ __device_handles_end = .;
  } > FLASH
 ztest :
 {
- _ztest_expected_result_entry_list_start = .; KEEP(*(SORT_BY_NAME(._ztest_expected_result_entry.static.*))); _ztest_expected_result_entry_list_end = .;
  _ztest_suite_node_list_start = .; KEEP(*(SORT_BY_NAME(._ztest_suite_node.static.*))); _ztest_suite_node_list_end = .;
  _ztest_unit_test_list_start = .; KEEP(*(SORT_BY_NAME(._ztest_unit_test.static.*))); _ztest_unit_test_list_end = .;
  _ztest_test_rule_list_start = .; KEEP(*(SORT_BY_NAME(._ztest_test_rule.static.*))); _ztest_test_rule_list_end = .;
@@ -143,8 +138,12 @@ ztest :
   KEEP(*(SORT(.log_const_*)));
   __log_const_end = .;
  } > FLASH
- log_backend_area : SUBALIGN(4) { _log_backend_list_start = .; KEEP(*(SORT_BY_NAME(._log_backend.static.*))); _log_backend_list_end = .; } > FLASH
- log_link_area : SUBALIGN(4) { _log_link_list_start = .; KEEP(*(SORT_BY_NAME(._log_link.static.*))); _log_link_list_end = .; } > FLASH
+ log_backends_sections : ALIGN_WITH_INPUT
+ {
+  __log_backends_start = .;
+  KEEP(*("._log_backend.*"));
+  __log_backends_end = .;
+ } > FLASH
  tracing_backend_area : SUBALIGN(4) { _tracing_backend_list_start = .; KEEP(*(SORT_BY_NAME(._tracing_backend.static.*))); _tracing_backend_list_end = .; } > FLASH
  zephyr_dbg_info : ALIGN_WITH_INPUT
  {
@@ -190,7 +189,7 @@ ztest :
  } > FLASH
  __rodata_region_end = .;
  . = ALIGN(_region_min_align);
- __rom_region_end = __rom_region_start + . - ADDR(rom_start);
+ __rom_region_end = .;
    
     /DISCARD/ : {
  *(.got.plt)
@@ -210,7 +209,7 @@ ztest :
  *(".ramfunc.*")
  . = ALIGN(_region_min_align);
  __ramfunc_end = .;
-} > RAM AT > FLASH
+} > SRAM AT > FLASH
 __ramfunc_size = __ramfunc_end - __ramfunc_start;
 __ramfunc_load_start = LOADADDR(.ramfunc);
    
@@ -222,7 +221,7 @@ __ramfunc_load_start = LOADADDR(.ramfunc);
  *(".data.*")
  *(".kernel.*")
  __data_end = .;
- } > RAM AT > FLASH
+ } > SRAM AT > FLASH
     __data_size = __data_end - __data_start;
     __data_load_start = LOADADDR(datas);
     __data_region_load_start = LOADADDR(datas);
@@ -232,7 +231,7 @@ __ramfunc_load_start = LOADADDR(.ramfunc);
   KEEP(*(".z_devstate"));
   KEEP(*(".z_devstate.*"));
                 __device_states_end = .;
-        } > RAM AT > FLASH
+        } > SRAM AT > FLASH
  initshell : ALIGN_WITH_INPUT
  {
   __shell_module_start = .;
@@ -241,32 +240,32 @@ __ramfunc_load_start = LOADADDR(.ramfunc);
   __shell_cmd_start = .;
   KEEP(*(".shell_cmd_*"));
   __shell_cmd_end = .;
- } > RAM AT > FLASH
- log_mpsc_pbuf_area : ALIGN_WITH_INPUT SUBALIGN(4) { _log_mpsc_pbuf_list_start = .; *(SORT_BY_NAME(._log_mpsc_pbuf.static.*)); _log_mpsc_pbuf_list_end = .; } > RAM AT > FLASH
- log_msg_ptr_area : ALIGN_WITH_INPUT SUBALIGN(4) { _log_msg_ptr_list_start = .; KEEP(*(SORT_BY_NAME(._log_msg_ptr.static.*))); _log_msg_ptr_list_end = .; } > RAM AT > FLASH
+ } > SRAM AT > FLASH
  log_dynamic_sections : ALIGN_WITH_INPUT
  {
   __log_dynamic_start = .;
   KEEP(*(SORT(.log_dynamic_*)));
   __log_dynamic_end = .;
- } > RAM AT > FLASH
- k_timer_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_timer_list_start = .; *(SORT_BY_NAME(._k_timer.static.*)); _k_timer_list_end = .; } > RAM AT > FLASH
- k_mem_slab_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_mem_slab_list_start = .; *(SORT_BY_NAME(._k_mem_slab.static.*)); _k_mem_slab_list_end = .; } > RAM AT > FLASH
- k_heap_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_heap_list_start = .; *(SORT_BY_NAME(._k_heap.static.*)); _k_heap_list_end = .; } > RAM AT > FLASH
- k_mutex_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_mutex_list_start = .; *(SORT_BY_NAME(._k_mutex.static.*)); _k_mutex_list_end = .; } > RAM AT > FLASH
- k_stack_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_stack_list_start = .; *(SORT_BY_NAME(._k_stack.static.*)); _k_stack_list_end = .; } > RAM AT > FLASH
- k_msgq_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_msgq_list_start = .; *(SORT_BY_NAME(._k_msgq.static.*)); _k_msgq_list_end = .; } > RAM AT > FLASH
- k_mbox_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_mbox_list_start = .; *(SORT_BY_NAME(._k_mbox.static.*)); _k_mbox_list_end = .; } > RAM AT > FLASH
- k_pipe_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_pipe_list_start = .; *(SORT_BY_NAME(._k_pipe.static.*)); _k_pipe_list_end = .; } > RAM AT > FLASH
- k_sem_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_sem_list_start = .; *(SORT_BY_NAME(._k_sem.static.*)); _k_sem_list_end = .; } > RAM AT > FLASH
- k_event_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_event_list_start = .; *(SORT_BY_NAME(._k_event.static.*)); _k_event_list_end = .; } > RAM AT > FLASH
- k_queue_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_queue_list_start = .; *(SORT_BY_NAME(._k_queue.static.*)); _k_queue_list_end = .; } > RAM AT > FLASH
- k_condvar_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_condvar_list_start = .; *(SORT_BY_NAME(._k_condvar.static.*)); _k_condvar_list_end = .; } > RAM AT > FLASH
+ } > SRAM AT > FLASH
+ _static_thread_data_area : ALIGN_WITH_INPUT SUBALIGN(4) { __static_thread_data_list_start = .; KEEP(*(SORT_BY_NAME(.__static_thread_data.static.*))); __static_thread_data_list_end = .; } > SRAM AT > FLASH
+ k_timer_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_timer_list_start = .; *(SORT_BY_NAME(._k_timer.static.*)); _k_timer_list_end = .; } > SRAM AT > FLASH
+ k_mem_slab_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_mem_slab_list_start = .; *(SORT_BY_NAME(._k_mem_slab.static.*)); _k_mem_slab_list_end = .; } > SRAM AT > FLASH
+ k_mem_pool_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_mem_pool_list_start = .; *(SORT_BY_NAME(._k_mem_pool.static.*)); _k_mem_pool_list_end = .; } > SRAM AT > FLASH
+ k_heap_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_heap_list_start = .; *(SORT_BY_NAME(._k_heap.static.*)); _k_heap_list_end = .; } > SRAM AT > FLASH
+ k_mutex_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_mutex_list_start = .; *(SORT_BY_NAME(._k_mutex.static.*)); _k_mutex_list_end = .; } > SRAM AT > FLASH
+ k_stack_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_stack_list_start = .; *(SORT_BY_NAME(._k_stack.static.*)); _k_stack_list_end = .; } > SRAM AT > FLASH
+ k_msgq_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_msgq_list_start = .; *(SORT_BY_NAME(._k_msgq.static.*)); _k_msgq_list_end = .; } > SRAM AT > FLASH
+ k_mbox_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_mbox_list_start = .; *(SORT_BY_NAME(._k_mbox.static.*)); _k_mbox_list_end = .; } > SRAM AT > FLASH
+ k_pipe_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_pipe_list_start = .; *(SORT_BY_NAME(._k_pipe.static.*)); _k_pipe_list_end = .; } > SRAM AT > FLASH
+ k_sem_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_sem_list_start = .; *(SORT_BY_NAME(._k_sem.static.*)); _k_sem_list_end = .; } > SRAM AT > FLASH
+ k_event_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_event_list_start = .; *(SORT_BY_NAME(._k_event.static.*)); _k_event_list_end = .; } > SRAM AT > FLASH
+ k_queue_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_queue_list_start = .; *(SORT_BY_NAME(._k_queue.static.*)); _k_queue_list_end = .; } > SRAM AT > FLASH
+ k_condvar_area : ALIGN_WITH_INPUT SUBALIGN(4) { _k_condvar_list_start = .; *(SORT_BY_NAME(._k_condvar.static.*)); _k_condvar_list_end = .; } > SRAM AT > FLASH
  _net_buf_pool_area : ALIGN_WITH_INPUT SUBALIGN(4)
  {
   _net_buf_pool_list = .;
   KEEP(*(SORT_BY_NAME("._net_buf_pool.static.*")))
- } > RAM AT > FLASH
+ } > SRAM AT > FLASH
     __data_region_end = .;
    bss (NOLOAD) : ALIGN_WITH_INPUT
  {
@@ -278,13 +277,13 @@ __ramfunc_load_start = LOADADDR(.ramfunc);
  *(COMMON)
  *(".kernel_bss.*")
  __bss_end = ALIGN(4);
- } > RAM AT > RAM
+ } > SRAM AT > SRAM
     noinit (NOLOAD) :
         {
         *(.noinit)
         *(".noinit.*")
  *(".kernel_noinit.*")
-        } > RAM AT > RAM
+        } > SRAM
     _image_ram_end = .;
     _end = .;
     __kernel_ram_end = 0x21000000 + 0x10000;
@@ -333,9 +332,8 @@ __ramfunc_load_start = LOADADDR(.ramfunc);
  KEEP(*(.gnu.attributes))
  }
     SRAM1 553648128 (NOLOAD) : { __SRAM1_start = .; KEEP(*(SRAM1)) KEEP(*(SRAM1.*)) __SRAM1_end = .; } > SRAM1 __SRAM1_size = __SRAM1_end - __SRAM1_start; __SRAM1_load_start = LOADADDR(SRAM1);
-.last_section :
+.last_section (NOLOAD) :
 {
-  LONG(0xE015E015)
 } > FLASH
-_flash_used = LOADADDR(.last_section) + SIZEOF(.last_section) - __rom_region_start;
+_flash_used = LOADADDR(.last_section) - __rom_region_start;
     }

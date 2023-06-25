@@ -461,14 +461,6 @@ uintptr_t z_mrsh_can_get_capabilities(uintptr_t arg1, uintptr_t arg2, uintptr_t 
          uintptr_t arg4, uintptr_t arg5, uintptr_t arg6, void *ssf);
 
 __weak ALIAS_OF(handler_no_syscall)
-uintptr_t z_mrsh_can_start(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
-         uintptr_t arg4, uintptr_t arg5, uintptr_t arg6, void *ssf);
-
-__weak ALIAS_OF(handler_no_syscall)
-uintptr_t z_mrsh_can_stop(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
-         uintptr_t arg4, uintptr_t arg5, uintptr_t arg6, void *ssf);
-
-__weak ALIAS_OF(handler_no_syscall)
 uintptr_t z_mrsh_can_set_mode(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
          uintptr_t arg4, uintptr_t arg5, uintptr_t arg6, void *ssf);
 
@@ -534,10 +526,6 @@ uintptr_t z_mrsh_counter_stop(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
 
 __weak ALIAS_OF(handler_no_syscall)
 uintptr_t z_mrsh_counter_get_value(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
-         uintptr_t arg4, uintptr_t arg5, uintptr_t arg6, void *ssf);
-
-__weak ALIAS_OF(handler_no_syscall)
-uintptr_t z_mrsh_counter_get_value_64(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
          uintptr_t arg4, uintptr_t arg5, uintptr_t arg6, void *ssf);
 
 __weak ALIAS_OF(handler_no_syscall)
@@ -842,14 +830,6 @@ uintptr_t z_mrsh_i2s_buf_write(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
 
 __weak ALIAS_OF(handler_no_syscall)
 uintptr_t z_mrsh_i2s_trigger(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
-         uintptr_t arg4, uintptr_t arg5, uintptr_t arg6, void *ssf);
-
-__weak ALIAS_OF(handler_no_syscall)
-uintptr_t z_mrsh_i3c_do_ccc(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
-         uintptr_t arg4, uintptr_t arg5, uintptr_t arg6, void *ssf);
-
-__weak ALIAS_OF(handler_no_syscall)
-uintptr_t z_mrsh_i3c_transfer(uintptr_t arg1, uintptr_t arg2, uintptr_t arg3,
          uintptr_t arg4, uintptr_t arg5, uintptr_t arg6, void *ssf);
 
 __weak ALIAS_OF(handler_no_syscall)
@@ -1694,8 +1674,6 @@ const _k_syscall_handler_t _k_syscall_table[K_SYSCALL_LIMIT] = {
 	[K_SYSCALL_CAN_SET_BITRATE_DATA] = z_mrsh_can_set_bitrate_data,
 	[K_SYSCALL_CAN_SET_TIMING] = z_mrsh_can_set_timing,
 	[K_SYSCALL_CAN_GET_CAPABILITIES] = z_mrsh_can_get_capabilities,
-	[K_SYSCALL_CAN_START] = z_mrsh_can_start,
-	[K_SYSCALL_CAN_STOP] = z_mrsh_can_stop,
 	[K_SYSCALL_CAN_SET_MODE] = z_mrsh_can_set_mode,
 	[K_SYSCALL_CAN_SET_BITRATE] = z_mrsh_can_set_bitrate,
 	[K_SYSCALL_CAN_SEND] = z_mrsh_can_send,
@@ -1713,7 +1691,6 @@ const _k_syscall_handler_t _k_syscall_table[K_SYSCALL_LIMIT] = {
 	[K_SYSCALL_COUNTER_START] = z_mrsh_counter_start,
 	[K_SYSCALL_COUNTER_STOP] = z_mrsh_counter_stop,
 	[K_SYSCALL_COUNTER_GET_VALUE] = z_mrsh_counter_get_value,
-	[K_SYSCALL_COUNTER_GET_VALUE_64] = z_mrsh_counter_get_value_64,
 	[K_SYSCALL_COUNTER_SET_CHANNEL_ALARM] = z_mrsh_counter_set_channel_alarm,
 	[K_SYSCALL_COUNTER_CANCEL_CHANNEL_ALARM] = z_mrsh_counter_cancel_channel_alarm,
 	[K_SYSCALL_COUNTER_SET_TOP_VALUE] = z_mrsh_counter_set_top_value,
@@ -1790,8 +1767,6 @@ const _k_syscall_handler_t _k_syscall_table[K_SYSCALL_LIMIT] = {
 	[K_SYSCALL_I2S_BUF_READ] = z_mrsh_i2s_buf_read,
 	[K_SYSCALL_I2S_BUF_WRITE] = z_mrsh_i2s_buf_write,
 	[K_SYSCALL_I2S_TRIGGER] = z_mrsh_i2s_trigger,
-	[K_SYSCALL_I3C_DO_CCC] = z_mrsh_i3c_do_ccc,
-	[K_SYSCALL_I3C_TRANSFER] = z_mrsh_i3c_transfer,
 	[K_SYSCALL_IPM_SEND] = z_mrsh_ipm_send,
 	[K_SYSCALL_IPM_MAX_DATA_SIZE_GET] = z_mrsh_ipm_max_data_size_get,
 	[K_SYSCALL_IPM_MAX_ID_VAL_GET] = z_mrsh_ipm_max_id_val_get,

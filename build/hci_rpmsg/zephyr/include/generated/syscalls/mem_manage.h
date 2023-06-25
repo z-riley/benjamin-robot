@@ -34,7 +34,7 @@ static inline void k_mem_paging_stats_get(struct k_mem_paging_stats_t * stats)
 	z_impl_k_mem_paging_stats_get(stats);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define k_mem_paging_stats_get(stats) do { 	sys_port_trace_syscall_enter(K_SYSCALL_K_MEM_PAGING_STATS_GET, k_mem_paging_stats_get, stats); 	k_mem_paging_stats_get(stats); 	sys_port_trace_syscall_exit(K_SYSCALL_K_MEM_PAGING_STATS_GET, k_mem_paging_stats_get, stats); } while(false)
@@ -59,7 +59,7 @@ static inline void k_mem_paging_thread_stats_get(struct k_thread * thread, struc
 	z_impl_k_mem_paging_thread_stats_get(thread, stats);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define k_mem_paging_thread_stats_get(thread, stats) do { 	sys_port_trace_syscall_enter(K_SYSCALL_K_MEM_PAGING_THREAD_STATS_GET, k_mem_paging_thread_stats_get, thread, stats); 	k_mem_paging_thread_stats_get(thread, stats); 	sys_port_trace_syscall_exit(K_SYSCALL_K_MEM_PAGING_THREAD_STATS_GET, k_mem_paging_thread_stats_get, thread, stats); } while(false)
@@ -83,7 +83,7 @@ static inline void k_mem_paging_histogram_eviction_get(struct k_mem_paging_histo
 	z_impl_k_mem_paging_histogram_eviction_get(hist);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define k_mem_paging_histogram_eviction_get(hist) do { 	sys_port_trace_syscall_enter(K_SYSCALL_K_MEM_PAGING_HISTOGRAM_EVICTION_GET, k_mem_paging_histogram_eviction_get, hist); 	k_mem_paging_histogram_eviction_get(hist); 	sys_port_trace_syscall_exit(K_SYSCALL_K_MEM_PAGING_HISTOGRAM_EVICTION_GET, k_mem_paging_histogram_eviction_get, hist); } while(false)
@@ -107,7 +107,7 @@ static inline void k_mem_paging_histogram_backing_store_page_in_get(struct k_mem
 	z_impl_k_mem_paging_histogram_backing_store_page_in_get(hist);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define k_mem_paging_histogram_backing_store_page_in_get(hist) do { 	sys_port_trace_syscall_enter(K_SYSCALL_K_MEM_PAGING_HISTOGRAM_BACKING_STORE_PAGE_IN_GET, k_mem_paging_histogram_backing_store_page_in_get, hist); 	k_mem_paging_histogram_backing_store_page_in_get(hist); 	sys_port_trace_syscall_exit(K_SYSCALL_K_MEM_PAGING_HISTOGRAM_BACKING_STORE_PAGE_IN_GET, k_mem_paging_histogram_backing_store_page_in_get, hist); } while(false)
@@ -131,7 +131,7 @@ static inline void k_mem_paging_histogram_backing_store_page_out_get(struct k_me
 	z_impl_k_mem_paging_histogram_backing_store_page_out_get(hist);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define k_mem_paging_histogram_backing_store_page_out_get(hist) do { 	sys_port_trace_syscall_enter(K_SYSCALL_K_MEM_PAGING_HISTOGRAM_BACKING_STORE_PAGE_OUT_GET, k_mem_paging_histogram_backing_store_page_out_get, hist); 	k_mem_paging_histogram_backing_store_page_out_get(hist); 	sys_port_trace_syscall_exit(K_SYSCALL_K_MEM_PAGING_HISTOGRAM_BACKING_STORE_PAGE_OUT_GET, k_mem_paging_histogram_backing_store_page_out_get, hist); } while(false)

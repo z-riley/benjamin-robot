@@ -34,7 +34,7 @@ static inline int syscon_get_base(const struct device * dev, uintptr_t * addr)
 	return z_impl_syscon_get_base(dev, addr);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define syscon_get_base(dev, addr) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYSCON_GET_BASE, syscon_get_base, dev, addr); 	retval = syscon_get_base(dev, addr); 	sys_port_trace_syscall_exit(K_SYSCALL_SYSCON_GET_BASE, syscon_get_base, dev, addr, retval); 	retval; })
@@ -59,7 +59,7 @@ static inline int syscon_read_reg(const struct device * dev, uint16_t reg, uint3
 	return z_impl_syscon_read_reg(dev, reg, val);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define syscon_read_reg(dev, reg, val) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYSCON_READ_REG, syscon_read_reg, dev, reg, val); 	retval = syscon_read_reg(dev, reg, val); 	sys_port_trace_syscall_exit(K_SYSCALL_SYSCON_READ_REG, syscon_read_reg, dev, reg, val, retval); 	retval; })
@@ -84,7 +84,7 @@ static inline int syscon_write_reg(const struct device * dev, uint16_t reg, uint
 	return z_impl_syscon_write_reg(dev, reg, val);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define syscon_write_reg(dev, reg, val) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYSCON_WRITE_REG, syscon_write_reg, dev, reg, val); 	retval = syscon_write_reg(dev, reg, val); 	sys_port_trace_syscall_exit(K_SYSCALL_SYSCON_WRITE_REG, syscon_write_reg, dev, reg, val, retval); 	retval; })
@@ -108,7 +108,7 @@ static inline int syscon_get_size(const struct device * dev, size_t * size)
 	return z_impl_syscon_get_size(dev, size);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define syscon_get_size(dev, size) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYSCON_GET_SIZE, syscon_get_size, dev, size); 	retval = syscon_get_size(dev, size); 	sys_port_trace_syscall_exit(K_SYSCALL_SYSCON_GET_SIZE, syscon_get_size, dev, size, retval); 	retval; })

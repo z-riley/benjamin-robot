@@ -34,7 +34,7 @@ static inline int mbox_send(const struct mbox_channel * channel, const struct mb
 	return z_impl_mbox_send(channel, msg);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define mbox_send(channel, msg) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MBOX_SEND, mbox_send, channel, msg); 	retval = mbox_send(channel, msg); 	sys_port_trace_syscall_exit(K_SYSCALL_MBOX_SEND, mbox_send, channel, msg, retval); 	retval; })
@@ -57,7 +57,7 @@ static inline int mbox_mtu_get(const struct device * dev)
 	return z_impl_mbox_mtu_get(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define mbox_mtu_get(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MBOX_MTU_GET, mbox_mtu_get, dev); 	retval = mbox_mtu_get(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_MBOX_MTU_GET, mbox_mtu_get, dev, retval); 	retval; })
@@ -81,7 +81,7 @@ static inline int mbox_set_enabled(const struct mbox_channel * channel, bool ena
 	return z_impl_mbox_set_enabled(channel, enable);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define mbox_set_enabled(channel, enable) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MBOX_SET_ENABLED, mbox_set_enabled, channel, enable); 	retval = mbox_set_enabled(channel, enable); 	sys_port_trace_syscall_exit(K_SYSCALL_MBOX_SET_ENABLED, mbox_set_enabled, channel, enable, retval); 	retval; })
@@ -104,7 +104,7 @@ static inline uint32_t mbox_max_channels_get(const struct device * dev)
 	return z_impl_mbox_max_channels_get(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define mbox_max_channels_get(dev) ({ 	uint32_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MBOX_MAX_CHANNELS_GET, mbox_max_channels_get, dev); 	retval = mbox_max_channels_get(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_MBOX_MAX_CHANNELS_GET, mbox_max_channels_get, dev, retval); 	retval; })

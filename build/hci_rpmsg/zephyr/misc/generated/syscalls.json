@@ -799,20 +799,6 @@
     ],
     [
         [
-            "int can_start",
-            "const struct device *dev"
-        ],
-        "can.h"
-    ],
-    [
-        [
-            "int can_stop",
-            "const struct device *dev"
-        ],
-        "can.h"
-    ],
-    [
-        [
             "int can_set_mode",
             "const struct device *dev, can_mode_t mode"
         ],
@@ -828,14 +814,14 @@
     [
         [
             "int can_send",
-            "const struct device *dev, const struct can_frame *frame,\n\t\t       k_timeout_t timeout, can_tx_callback_t callback,\n\t\t       void *user_data"
+            "const struct device *dev, const struct zcan_frame *frame,\n\t\t       k_timeout_t timeout, can_tx_callback_t callback,\n\t\t       void *user_data"
         ],
         "can.h"
     ],
     [
         [
             "int can_add_rx_filter_msgq",
-            "const struct device *dev, struct k_msgq *msgq,\n\t\t\t\t     const struct can_filter *filter"
+            "const struct device *dev, struct k_msgq *msgq,\n\t\t\t\t     const struct zcan_filter *filter"
         ],
         "can.h"
     ],
@@ -849,7 +835,7 @@
     [
         [
             "int can_get_max_filters",
-            "const struct device *dev, bool ide"
+            "const struct device *dev, enum can_ide id_type"
         ],
         "can.h"
     ],
@@ -927,13 +913,6 @@
         [
             "int counter_get_value",
             "const struct device *dev, uint32_t *ticks"
-        ],
-        "counter.h"
-    ],
-    [
-        [
-            "int counter_get_value_64",
-            "const struct device *dev, uint64_t *ticks"
         ],
         "counter.h"
     ],
@@ -1468,20 +1447,6 @@
             "const struct device *dev, enum i2s_dir dir,\n\t\t\t  enum i2s_trigger_cmd cmd"
         ],
         "i2s.h"
-    ],
-    [
-        [
-            "int i3c_do_ccc",
-            "const struct device *dev,\n\t\t\t struct i3c_ccc_payload *payload"
-        ],
-        "i3c.h"
-    ],
-    [
-        [
-            "int i3c_transfer",
-            "struct i3c_device_desc *target,\n\t\t\t   struct i3c_msg *msgs, uint8_t num_msgs"
-        ],
-        "i3c.h"
     ],
     [
         [

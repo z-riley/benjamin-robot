@@ -34,7 +34,7 @@ static inline void user_fault(unsigned int reason)
 	z_impl_user_fault(reason);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define user_fault(reason) do { 	sys_port_trace_syscall_enter(K_SYSCALL_USER_FAULT, user_fault, reason); 	user_fault(reason); 	sys_port_trace_syscall_exit(K_SYSCALL_USER_FAULT, user_fault, reason); } while(false)

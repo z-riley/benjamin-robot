@@ -34,7 +34,7 @@ static inline int phy_configure_link(const struct device * dev, enum phy_link_sp
 	return z_impl_phy_configure_link(dev, speeds);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define phy_configure_link(dev, speeds) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_CONFIGURE_LINK, phy_configure_link, dev, speeds); 	retval = phy_configure_link(dev, speeds); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_CONFIGURE_LINK, phy_configure_link, dev, speeds, retval); 	retval; })
@@ -58,7 +58,7 @@ static inline int phy_get_link_state(const struct device * dev, struct phy_link_
 	return z_impl_phy_get_link_state(dev, state);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define phy_get_link_state(dev, state) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_GET_LINK_STATE, phy_get_link_state, dev, state); 	retval = phy_get_link_state(dev, state); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_GET_LINK_STATE, phy_get_link_state, dev, state, retval); 	retval; })
@@ -83,7 +83,7 @@ static inline int phy_link_callback_set(const struct device * dev, phy_callback_
 	return z_impl_phy_link_callback_set(dev, callback, user_data);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define phy_link_callback_set(dev, callback, user_data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_LINK_CALLBACK_SET, phy_link_callback_set, dev, callback, user_data); 	retval = phy_link_callback_set(dev, callback, user_data); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_LINK_CALLBACK_SET, phy_link_callback_set, dev, callback, user_data, retval); 	retval; })
@@ -108,7 +108,7 @@ static inline int phy_read(const struct device * dev, uint16_t reg_addr, uint32_
 	return z_impl_phy_read(dev, reg_addr, value);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define phy_read(dev, reg_addr, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_READ, phy_read, dev, reg_addr, value); 	retval = phy_read(dev, reg_addr, value); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_READ, phy_read, dev, reg_addr, value, retval); 	retval; })
@@ -133,7 +133,7 @@ static inline int phy_write(const struct device * dev, uint16_t reg_addr, uint32
 	return z_impl_phy_write(dev, reg_addr, value);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define phy_write(dev, reg_addr, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PHY_WRITE, phy_write, dev, reg_addr, value); 	retval = phy_write(dev, reg_addr, value); 	sys_port_trace_syscall_exit(K_SYSCALL_PHY_WRITE, phy_write, dev, reg_addr, value, retval); 	retval; })

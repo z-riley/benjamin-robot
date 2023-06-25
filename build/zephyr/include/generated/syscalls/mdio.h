@@ -34,7 +34,7 @@ static inline void mdio_bus_enable(const struct device * dev)
 	z_impl_mdio_bus_enable(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define mdio_bus_enable(dev) do { 	sys_port_trace_syscall_enter(K_SYSCALL_MDIO_BUS_ENABLE, mdio_bus_enable, dev); 	mdio_bus_enable(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_MDIO_BUS_ENABLE, mdio_bus_enable, dev); } while(false)
@@ -58,7 +58,7 @@ static inline void mdio_bus_disable(const struct device * dev)
 	z_impl_mdio_bus_disable(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define mdio_bus_disable(dev) do { 	sys_port_trace_syscall_enter(K_SYSCALL_MDIO_BUS_DISABLE, mdio_bus_disable, dev); 	mdio_bus_disable(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_MDIO_BUS_DISABLE, mdio_bus_disable, dev); } while(false)
@@ -84,7 +84,7 @@ static inline int mdio_read(const struct device * dev, uint8_t prtad, uint8_t de
 	return z_impl_mdio_read(dev, prtad, devad, data);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define mdio_read(dev, prtad, devad, data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MDIO_READ, mdio_read, dev, prtad, devad, data); 	retval = mdio_read(dev, prtad, devad, data); 	sys_port_trace_syscall_exit(K_SYSCALL_MDIO_READ, mdio_read, dev, prtad, devad, data, retval); 	retval; })
@@ -110,7 +110,7 @@ static inline int mdio_write(const struct device * dev, uint8_t prtad, uint8_t d
 	return z_impl_mdio_write(dev, prtad, devad, data);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define mdio_write(dev, prtad, devad, data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MDIO_WRITE, mdio_write, dev, prtad, devad, data); 	retval = mdio_write(dev, prtad, devad, data); 	sys_port_trace_syscall_exit(K_SYSCALL_MDIO_WRITE, mdio_write, dev, prtad, devad, data, retval); 	retval; })

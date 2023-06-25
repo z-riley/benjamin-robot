@@ -33,7 +33,7 @@ static inline const struct device * net_eth_get_ptp_clock_by_index(int index)
 	return z_impl_net_eth_get_ptp_clock_by_index(index);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define net_eth_get_ptp_clock_by_index(index) ({ 	const struct device * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_NET_ETH_GET_PTP_CLOCK_BY_INDEX, net_eth_get_ptp_clock_by_index, index); 	retval = net_eth_get_ptp_clock_by_index(index); 	sys_port_trace_syscall_exit(K_SYSCALL_NET_ETH_GET_PTP_CLOCK_BY_INDEX, net_eth_get_ptp_clock_by_index, index, retval); 	retval; })

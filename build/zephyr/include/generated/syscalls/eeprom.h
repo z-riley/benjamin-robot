@@ -36,7 +36,7 @@ static inline int eeprom_read(const struct device * dev, off_t offset, void * da
 	return z_impl_eeprom_read(dev, offset, data, len);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define eeprom_read(dev, offset, data, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EEPROM_READ, eeprom_read, dev, offset, data, len); 	retval = eeprom_read(dev, offset, data, len); 	sys_port_trace_syscall_exit(K_SYSCALL_EEPROM_READ, eeprom_read, dev, offset, data, len, retval); 	retval; })
@@ -62,7 +62,7 @@ static inline int eeprom_write(const struct device * dev, off_t offset, const vo
 	return z_impl_eeprom_write(dev, offset, data, len);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define eeprom_write(dev, offset, data, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EEPROM_WRITE, eeprom_write, dev, offset, data, len); 	retval = eeprom_write(dev, offset, data, len); 	sys_port_trace_syscall_exit(K_SYSCALL_EEPROM_WRITE, eeprom_write, dev, offset, data, len, retval); 	retval; })
@@ -85,7 +85,7 @@ static inline size_t eeprom_get_size(const struct device * dev)
 	return z_impl_eeprom_get_size(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define eeprom_get_size(dev) ({ 	size_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_EEPROM_GET_SIZE, eeprom_get_size, dev); 	retval = eeprom_get_size(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_EEPROM_GET_SIZE, eeprom_get_size, dev, retval); 	retval; })

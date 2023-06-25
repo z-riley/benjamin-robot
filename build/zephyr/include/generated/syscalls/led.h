@@ -36,7 +36,7 @@ static inline int led_blink(const struct device * dev, uint32_t led, uint32_t de
 	return z_impl_led_blink(dev, led, delay_on, delay_off);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define led_blink(dev, led, delay_on, delay_off) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_BLINK, led_blink, dev, led, delay_on, delay_off); 	retval = led_blink(dev, led, delay_on, delay_off); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_BLINK, led_blink, dev, led, delay_on, delay_off, retval); 	retval; })
@@ -61,7 +61,7 @@ static inline int led_get_info(const struct device * dev, uint32_t led, const st
 	return z_impl_led_get_info(dev, led, info);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define led_get_info(dev, led, info) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_GET_INFO, led_get_info, dev, led, info); 	retval = led_get_info(dev, led, info); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_GET_INFO, led_get_info, dev, led, info, retval); 	retval; })
@@ -86,7 +86,7 @@ static inline int led_set_brightness(const struct device * dev, uint32_t led, ui
 	return z_impl_led_set_brightness(dev, led, value);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define led_set_brightness(dev, led, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_SET_BRIGHTNESS, led_set_brightness, dev, led, value); 	retval = led_set_brightness(dev, led, value); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_SET_BRIGHTNESS, led_set_brightness, dev, led, value, retval); 	retval; })
@@ -112,7 +112,7 @@ static inline int led_write_channels(const struct device * dev, uint32_t start_c
 	return z_impl_led_write_channels(dev, start_channel, num_channels, buf);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define led_write_channels(dev, start_channel, num_channels, buf) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_WRITE_CHANNELS, led_write_channels, dev, start_channel, num_channels, buf); 	retval = led_write_channels(dev, start_channel, num_channels, buf); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_WRITE_CHANNELS, led_write_channels, dev, start_channel, num_channels, buf, retval); 	retval; })
@@ -137,7 +137,7 @@ static inline int led_set_channel(const struct device * dev, uint32_t channel, u
 	return z_impl_led_set_channel(dev, channel, value);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define led_set_channel(dev, channel, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_SET_CHANNEL, led_set_channel, dev, channel, value); 	retval = led_set_channel(dev, channel, value); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_SET_CHANNEL, led_set_channel, dev, channel, value, retval); 	retval; })
@@ -163,7 +163,7 @@ static inline int led_set_color(const struct device * dev, uint32_t led, uint8_t
 	return z_impl_led_set_color(dev, led, num_colors, color);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define led_set_color(dev, led, num_colors, color) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_SET_COLOR, led_set_color, dev, led, num_colors, color); 	retval = led_set_color(dev, led, num_colors, color); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_SET_COLOR, led_set_color, dev, led, num_colors, color, retval); 	retval; })
@@ -187,7 +187,7 @@ static inline int led_on(const struct device * dev, uint32_t led)
 	return z_impl_led_on(dev, led);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define led_on(dev, led) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_ON, led_on, dev, led); 	retval = led_on(dev, led); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_ON, led_on, dev, led, retval); 	retval; })
@@ -211,7 +211,7 @@ static inline int led_off(const struct device * dev, uint32_t led)
 	return z_impl_led_off(dev, led);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define led_off(dev, led) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LED_OFF, led_off, dev, led); 	retval = led_off(dev, led); 	sys_port_trace_syscall_exit(K_SYSCALL_LED_OFF, led_off, dev, led, retval); 	retval; })

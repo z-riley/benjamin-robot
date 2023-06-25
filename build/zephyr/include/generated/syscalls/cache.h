@@ -33,7 +33,7 @@ static inline int sys_cache_data_all(int op)
 	return z_impl_sys_cache_data_all(op);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sys_cache_data_all(op) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYS_CACHE_DATA_ALL, sys_cache_data_all, op); 	retval = sys_cache_data_all(op); 	sys_port_trace_syscall_exit(K_SYSCALL_SYS_CACHE_DATA_ALL, sys_cache_data_all, op, retval); 	retval; })
@@ -58,7 +58,7 @@ static inline int sys_cache_data_range(void * addr, size_t size, int op)
 	return z_impl_sys_cache_data_range(addr, size, op);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sys_cache_data_range(addr, size, op) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYS_CACHE_DATA_RANGE, sys_cache_data_range, addr, size, op); 	retval = sys_cache_data_range(addr, size, op); 	sys_port_trace_syscall_exit(K_SYSCALL_SYS_CACHE_DATA_RANGE, sys_cache_data_range, addr, size, op, retval); 	retval; })
@@ -81,7 +81,7 @@ static inline int sys_cache_instr_all(int op)
 	return z_impl_sys_cache_instr_all(op);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sys_cache_instr_all(op) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYS_CACHE_INSTR_ALL, sys_cache_instr_all, op); 	retval = sys_cache_instr_all(op); 	sys_port_trace_syscall_exit(K_SYSCALL_SYS_CACHE_INSTR_ALL, sys_cache_instr_all, op, retval); 	retval; })
@@ -106,7 +106,7 @@ static inline int sys_cache_instr_range(void * addr, size_t size, int op)
 	return z_impl_sys_cache_instr_range(addr, size, op);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sys_cache_instr_range(addr, size, op) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYS_CACHE_INSTR_RANGE, sys_cache_instr_range, addr, size, op); 	retval = sys_cache_instr_range(addr, size, op); 	sys_port_trace_syscall_exit(K_SYSCALL_SYS_CACHE_INSTR_RANGE, sys_cache_instr_range, addr, size, op, retval); 	retval; })

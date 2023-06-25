@@ -35,7 +35,7 @@ static inline int entropy_get_entropy(const struct device * dev, uint8_t * buffe
 	return z_impl_entropy_get_entropy(dev, buffer, length);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define entropy_get_entropy(dev, buffer, length) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ENTROPY_GET_ENTROPY, entropy_get_entropy, dev, buffer, length); 	retval = entropy_get_entropy(dev, buffer, length); 	sys_port_trace_syscall_exit(K_SYSCALL_ENTROPY_GET_ENTROPY, entropy_get_entropy, dev, buffer, length, retval); 	retval; })

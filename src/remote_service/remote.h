@@ -11,7 +11,7 @@
 #define BT_UUID_REMOTE_SERV_VAL \
 	BT_UUID_128_ENCODE(0xe9ea0001, 0xe19b, 0x482d, 0x9293, 0xc7907585fc48)
 
-/** @brief UUID of the Button Characteristic. **/
+/** @brief UUID of the Button Characteristic (unused). **/
 #define BT_UUID_REMOTE_BUTTON_CHRC_VAL \
 	BT_UUID_128_ENCODE(0xe9ea0002, 0xe19b, 0x482d, 0x9293, 0xc7907585fc48)
 

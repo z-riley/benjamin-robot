@@ -36,7 +36,7 @@ static inline int spi_transceive(const struct device * dev, const struct spi_con
 	return z_impl_spi_transceive(dev, config, tx_bufs, rx_bufs);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define spi_transceive(dev, config, tx_bufs, rx_bufs) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SPI_TRANSCEIVE, spi_transceive, dev, config, tx_bufs, rx_bufs); 	retval = spi_transceive(dev, config, tx_bufs, rx_bufs); 	sys_port_trace_syscall_exit(K_SYSCALL_SPI_TRANSCEIVE, spi_transceive, dev, config, tx_bufs, rx_bufs, retval); 	retval; })
@@ -60,7 +60,7 @@ static inline int spi_release(const struct device * dev, const struct spi_config
 	return z_impl_spi_release(dev, config);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define spi_release(dev, config) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SPI_RELEASE, spi_release, dev, config); 	retval = spi_release(dev, config); 	sys_port_trace_syscall_exit(K_SYSCALL_SPI_RELEASE, spi_release, dev, config, retval); 	retval; })

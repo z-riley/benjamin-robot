@@ -51,7 +51,6 @@ case K_OBJ_DRIVER_FPGA: ret = "fpga driver"; break;
 case K_OBJ_DRIVER_GPIO: ret = "gpio driver"; break;
 case K_OBJ_DRIVER_I2C: ret = "i2c driver"; break;
 case K_OBJ_DRIVER_I2S: ret = "i2s driver"; break;
-case K_OBJ_DRIVER_I3C: ret = "i3c driver"; break;
 case K_OBJ_DRIVER_IPM: ret = "ipm driver"; break;
 case K_OBJ_DRIVER_KSCAN: ret = "kscan driver"; break;
 case K_OBJ_DRIVER_LED: ret = "led driver"; break;

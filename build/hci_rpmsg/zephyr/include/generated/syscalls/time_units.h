@@ -32,7 +32,7 @@ static inline int sys_clock_hw_cycles_per_sec_runtime_get(void)
 	return z_impl_sys_clock_hw_cycles_per_sec_runtime_get();
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sys_clock_hw_cycles_per_sec_runtime_get() ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SYS_CLOCK_HW_CYCLES_PER_SEC_RUNTIME_GET, sys_clock_hw_cycles_per_sec_runtime_get); 	retval = sys_clock_hw_cycles_per_sec_runtime_get(); 	sys_port_trace_syscall_exit(K_SYSCALL_SYS_CLOCK_HW_CYCLES_PER_SEC_RUNTIME_GET, sys_clock_hw_cycles_per_sec_runtime_get, retval); 	retval; })

@@ -33,7 +33,7 @@ static inline const struct device * uart_mux_find(int dlci_address)
 	return z_impl_uart_mux_find(dlci_address);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define uart_mux_find(dlci_address) ({ 	const struct device * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_UART_MUX_FIND, uart_mux_find, dlci_address); 	retval = uart_mux_find(dlci_address); 	sys_port_trace_syscall_exit(K_SYSCALL_UART_MUX_FIND, uart_mux_find, dlci_address, retval); 	retval; })

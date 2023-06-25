@@ -36,7 +36,7 @@ static inline int sensor_attr_set(const struct device * dev, enum sensor_channel
 	return z_impl_sensor_attr_set(dev, chan, attr, val);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sensor_attr_set(dev, chan, attr, val) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SENSOR_ATTR_SET, sensor_attr_set, dev, chan, attr, val); 	retval = sensor_attr_set(dev, chan, attr, val); 	sys_port_trace_syscall_exit(K_SYSCALL_SENSOR_ATTR_SET, sensor_attr_set, dev, chan, attr, val, retval); 	retval; })
@@ -62,7 +62,7 @@ static inline int sensor_attr_get(const struct device * dev, enum sensor_channel
 	return z_impl_sensor_attr_get(dev, chan, attr, val);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sensor_attr_get(dev, chan, attr, val) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SENSOR_ATTR_GET, sensor_attr_get, dev, chan, attr, val); 	retval = sensor_attr_get(dev, chan, attr, val); 	sys_port_trace_syscall_exit(K_SYSCALL_SENSOR_ATTR_GET, sensor_attr_get, dev, chan, attr, val, retval); 	retval; })
@@ -85,7 +85,7 @@ static inline int sensor_sample_fetch(const struct device * dev)
 	return z_impl_sensor_sample_fetch(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sensor_sample_fetch(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SENSOR_SAMPLE_FETCH, sensor_sample_fetch, dev); 	retval = sensor_sample_fetch(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_SENSOR_SAMPLE_FETCH, sensor_sample_fetch, dev, retval); 	retval; })
@@ -109,7 +109,7 @@ static inline int sensor_sample_fetch_chan(const struct device * dev, enum senso
 	return z_impl_sensor_sample_fetch_chan(dev, type);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sensor_sample_fetch_chan(dev, type) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SENSOR_SAMPLE_FETCH_CHAN, sensor_sample_fetch_chan, dev, type); 	retval = sensor_sample_fetch_chan(dev, type); 	sys_port_trace_syscall_exit(K_SYSCALL_SENSOR_SAMPLE_FETCH_CHAN, sensor_sample_fetch_chan, dev, type, retval); 	retval; })
@@ -134,7 +134,7 @@ static inline int sensor_channel_get(const struct device * dev, enum sensor_chan
 	return z_impl_sensor_channel_get(dev, chan, val);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define sensor_channel_get(dev, chan, val) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_SENSOR_CHANNEL_GET, sensor_channel_get, dev, chan, val); 	retval = sensor_channel_get(dev, chan, val); 	sys_port_trace_syscall_exit(K_SYSCALL_SENSOR_CHANNEL_GET, sensor_channel_get, dev, chan, val, retval); 	retval; })

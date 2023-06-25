@@ -1,4 +1,4 @@
 osource "c:/Users/zac46/Documents/Nordic/motor_control_test/boards/shields/*/Kconfig.defconfig"
 osource "c:/Users/zac46/Documents/Nordic/bluetooth_peripheral_uart/boards/shields/*/Kconfig.defconfig"
 osource "c:/Users/zac46/Documents/Nordic/mpu6050_sample/boards/shields/*/Kconfig.defconfig"
-osource "C:/ncs/v2.2.0/nrf/boards/shields/*/Kconfig.defconfig"
+osource "C:/ncs/v2.1.2/nrf/boards/shields/*/Kconfig.defconfig"

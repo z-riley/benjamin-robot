@@ -12,7 +12,6 @@
 #include <lvgl.h>
 #include "remote_service/remote.h"
 #include "libs/ultrasonic_hc-sr04.h"
-#include "dot_matrix/dot_matrix.h"
 #include "helpers.h"
 
 // Logging
@@ -31,6 +30,9 @@ LOG_MODULE_REGISTER(LOG_MODULE_NAME);
 // OLED Display
 #define MY_DISP_HOR_RES 128
 #define MY_DISP_VER_RES 64
+
+// Motors
+#define MOTOR_TIMEOUT_MS 120
 
 // Function prototypes
 static struct bt_conn *current_conn;
@@ -58,10 +60,15 @@ static const struct device *oled_dev;
 // Variable declarations
 typedef enum
 {
-    FORWARDS_E,
-    RIGHT_E,
-    BACKWARDS_E,
-    LEFT_E
+    NONE_E = 0,
+    NORTH_E = 1,
+    NORTHEAST_E = 2,
+    EAST_E = 3,
+    SOUTHEAST_E = 4,
+    SOUTH_E = 5,
+    SOUTHWEST_E = 6,
+    WEST_E = 7,
+    NORTHWEST_E = 8
 } robot_dir_t;
 
 struct bt_conn_cb bluetooth_callbacks = {
@@ -101,14 +108,13 @@ static void on_data_received(struct bt_conn *conn, const uint8_t *const data, ui
     memcpy(temp_str, data, len);
     temp_str[len] = 0x00;
 
-    LOG_INF("Received data on conn %p. Len: %d", (void *)conn, len);;
-    LOG_INF("Data: %s", temp_str);
+    LOG_DBG("Received data on conn %p. Len: %d", (void *)conn, len);;
+    LOG_DBG("Data: %s", temp_str);
 
     update_motors(temp_str[0]); 
 
     // Start/reset timer. Call reset_motors if time elapses.
-    // Data sent from controller every 50 ms. 70 ms found to be good timeout.
-    k_timer_start(&motor_timeout, K_MSEC(70), K_NO_WAIT);
+    k_timer_start(&motor_timeout, K_MSEC(MOTOR_TIMEOUT_MS), K_NO_WAIT);
     
 } /* on_data_received */
 
@@ -118,12 +124,12 @@ static void update_motors(uint8_t dir_ascii)
     robot_dir_t dir;
     uint32_t motors_l_pwm_ns = 1500;
     uint32_t motors_r_pwm_ns = 1500;
-    const uint32_t ROBOT_SPEED = 400;       // Max 500
+    const uint32_t ROBOT_SPEED = 350;       // Max 500
     
    
     dir = (uint8_t)(dir_ascii - '0');      // Black magic convert to numeric
     LOG_DBG("ASCII: %u", dir_ascii);
-    LOG_DBG("Int: %u", dir);
+    LOG_INF("Int: %u", dir);
 
     /* Motor PWM->Speed Reference:
         Max foward = 2000 us
@@ -132,25 +138,44 @@ static void update_motors(uint8_t dir_ascii)
 
     switch(dir)
     {
-        case FORWARDS_E: 
+        case NONE_E:
+            motors_l_pwm_ns = PWM_USEC(1500);
+            motors_r_pwm_ns = PWM_USEC(1500);
+            break;
+        case NORTH_E: 
             motors_l_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
             motors_r_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
-
             break;
-        case RIGHT_E:
+        case NORTHEAST_E:
+            motors_l_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
+            motors_r_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED/2);
+            break;
+        case EAST_E:
             motors_l_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
             motors_r_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
             break;
-        case BACKWARDS_E:
+        case SOUTHEAST_E:
+            motors_l_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
+            motors_r_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED/2);
+            break;
+        case SOUTH_E:
             motors_l_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
             motors_r_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
             break;
-        case LEFT_E:
+        case SOUTHWEST_E:
+            motors_l_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED/2);
+            motors_r_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
+            break;
+        case WEST_E:
             motors_l_pwm_ns = PWM_USEC(1500 - ROBOT_SPEED);
+            motors_r_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
+            break;
+        case NORTHWEST_E:
+            motors_l_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED/2);
             motors_r_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
             break;
         default:
-            LOG_INF("Controller incorrectly configured. Set forwards = 0, right = 1, backwards = 2, left = 3.");
+            LOG_INF("Controller incorrectly configured. See robot_dir_t definition.");
             break;    
     }   
 
@@ -220,8 +245,16 @@ static void oled_init(void)
     // Create text label
     lv_obj_t *hello_label;
     hello_label = lv_label_create(lv_scr_act());
-	lv_label_set_text(hello_label, "Hi I'm Benjamin");
+	lv_label_set_text(hello_label, "Battery Voltage:");
 	lv_obj_align(hello_label, LV_ALIGN_CENTER, 0, 24);
+
+    // Create voltage label
+    lv_obj_t *voltage_label;
+    voltage_label = lv_label_create(lv_scr_act());
+    char fake_voltage_status[] = "4148 mV";
+    lv_label_set_text(voltage_label, fake_voltage_status);
+    lv_obj_align(voltage_label, "LV_ALIGN_BOTTOM_MID", 32, 0);
+
     display_blanking_off(oled_dev);
     lv_task_handler();
 
@@ -239,7 +272,7 @@ void ultrasonic_thread(void)
     
     for (;;)
     {
-        if (1) //if (current_conn) USUAL
+        if (NULL != current_conn)
         {               
             // Move proximity sensor to next position
             motor_err = pwm_set_pulse_dt(&motor_f, motor_f_pwm_ns);
@@ -255,14 +288,12 @@ void ultrasonic_thread(void)
 		    
             // Map servo position to 1-8 value 
             scan_position = map(motor_f_pwm_ns, 1000000, 2000000, 1, 8);
-            //LOG_INF("PWM: %lu   Scan: %lu", motor_f_pwm_ns/1000, scan_position);              // Motor PWM (1,000,000 to 2,000,000)
+            LOG_DBG("PWM: %lu   Scan: %lu", motor_f_pwm_ns/1000, scan_position);              // Motor PWM (1,000,000 to 2,000,000)
             
             if (scan_position != prev_scan_position)
             {
-                // Map distance value to respective bit field 
-                dist_display = 0xFF << map(dist_mm, 0, 500, 0, 8);
-                LOG_INF("Distance: %u mm, Position: %u, Distance bit field: "BYTE_TO_BINARY_PATTERN, dist_mm, scan_position, BYTE_TO_BINARY(dist_display));
-                dot_matrix_write(scan_position, dist_display);
+                // Placeholder. Write to screen
+                //LOG_INF("Distance: %u mm, Position: %u, Distance bit field: "BYTE_TO_BINARY_PATTERN, dist_mm, scan_position, BYTE_TO_BINARY(dist_display));
             }
             prev_scan_position = scan_position;
    
@@ -308,9 +339,7 @@ void main(void)
 	}
 
     i2c_init();
-    spi_init();
     oled_init();
-    dot_matrix_init();
 
     error = bluetooth_init(&bluetooth_callbacks, &remote_callbacks);
     if (error) 

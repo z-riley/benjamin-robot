@@ -5,7 +5,6 @@
 LOG_MODULE_REGISTER(LOG_MODULE_NAME);
 
 static K_SEM_DEFINE(bt_init_ok, 0, 1);
-// static uint8_t button_value = 0;
 
 #define DEVICE_NAME CONFIG_BT_DEVICE_NAME
 #define DEVICE_NAME_LEN (sizeof(DEVICE_NAME)-1)
@@ -24,21 +23,14 @@ static const struct bt_data sd[] = {
 /* Declarations */
 static ssize_t on_write(struct bt_conn *conn, const struct bt_gatt_attr *attr, const void *buf, uint16_t len, uint16_t offset, uint8_t flags);
 
-
-// Robot intent modifications
+// Robot control service
 BT_GATT_SERVICE_DEFINE(remote_srv,
-BT_GATT_PRIMARY_SERVICE(BT_UUID_REMOTE_SERVICE),
-    // BT_GATT_CHARACTERISTIC(BT_UUID_REMOTE_BUTTON_CHRC,
-    //                 BT_GATT_CHRC_READ | BT_GATT_CHRC_NOTIFY,
-    //                 BT_GATT_PERM_READ,
-    //                 read_button_characteristic_cb, NULL, NULL),
-    // BT_GATT_CCC(button_chrc_ccc_cfg_changed, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE),
+    BT_GATT_PRIMARY_SERVICE(BT_UUID_REMOTE_SERVICE),
     BT_GATT_CHARACTERISTIC(BT_UUID_REMOTE_MESSAGE_CHRC,
-                    BT_GATT_CHRC_WRITE_WITHOUT_RESP,
-                    BT_GATT_PERM_WRITE,
-                    NULL, on_write, NULL),
+    BT_GATT_CHRC_WRITE_WITHOUT_RESP,
+    BT_GATT_PERM_WRITE,
+    NULL, on_write, NULL),
 );
-
 
 /* Callbacks */
 void bt_ready(int err)
@@ -49,7 +41,6 @@ void bt_ready(int err)
     k_sem_give(&bt_init_ok);
 } /* bt_ready */
 
-
 static ssize_t on_write(struct bt_conn *conn,
                         const struct bt_gatt_attr *attr,
                         const void *buf,
@@ -57,7 +48,7 @@ static ssize_t on_write(struct bt_conn *conn,
                         uint16_t offset,
                         uint8_t flags)
 {
-    LOG_INF("Received data, handle %d, conn %p",
+    LOG_DBG("Received data, handle %d, conn %p",
         attr->handle, (void *)conn);
 
     if (remote_service_callbacks.data_received) {
@@ -65,7 +56,6 @@ static ssize_t on_write(struct bt_conn *conn,
     }
     return len;
 } /* on_write */
-
 
 int bluetooth_init(struct bt_conn_cb *bt_cb, struct bt_remote_service_cb *remote_cb)
 {
@@ -88,7 +78,7 @@ int bluetooth_init(struct bt_conn_cb *bt_cb, struct bt_remote_service_cb *remote
 
     err = bt_le_adv_start(BT_LE_ADV_CONN, ad, ARRAY_SIZE(ad), sd, ARRAY_SIZE(sd));
     if (err){
-        LOG_ERR("couldn't start advertising (err = %d", err);
+        LOG_ERR("Couldn't start advertising (err = %d", err);
         return err;
     }
 

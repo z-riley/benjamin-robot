@@ -35,7 +35,7 @@ static inline int net_addr_pton(sa_family_t family, const char * src, void * dst
 	return z_impl_net_addr_pton(family, src, dst);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define net_addr_pton(family, src, dst) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_NET_ADDR_PTON, net_addr_pton, family, src, dst); 	retval = net_addr_pton(family, src, dst); 	sys_port_trace_syscall_exit(K_SYSCALL_NET_ADDR_PTON, net_addr_pton, family, src, dst, retval); 	retval; })
@@ -61,7 +61,7 @@ static inline char * net_addr_ntop(sa_family_t family, const void * src, char * 
 	return z_impl_net_addr_ntop(family, src, dst, size);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define net_addr_ntop(family, src, dst, size) ({ 	char * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_NET_ADDR_NTOP, net_addr_ntop, family, src, dst, size); 	retval = net_addr_ntop(family, src, dst, size); 	sys_port_trace_syscall_exit(K_SYSCALL_NET_ADDR_NTOP, net_addr_ntop, family, src, dst, size, retval); 	retval; })

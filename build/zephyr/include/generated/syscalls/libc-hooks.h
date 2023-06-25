@@ -34,7 +34,7 @@ static inline int zephyr_read_stdin(char * buf, int nbytes)
 	return z_impl_zephyr_read_stdin(buf, nbytes);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define zephyr_read_stdin(buf, nbytes) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ZEPHYR_READ_STDIN, zephyr_read_stdin, buf, nbytes); 	retval = zephyr_read_stdin(buf, nbytes); 	sys_port_trace_syscall_exit(K_SYSCALL_ZEPHYR_READ_STDIN, zephyr_read_stdin, buf, nbytes, retval); 	retval; })
@@ -58,7 +58,7 @@ static inline int zephyr_write_stdout(const void * buf, int nbytes)
 	return z_impl_zephyr_write_stdout(buf, nbytes);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define zephyr_write_stdout(buf, nbytes) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ZEPHYR_WRITE_STDOUT, zephyr_write_stdout, buf, nbytes); 	retval = zephyr_write_stdout(buf, nbytes); 	sys_port_trace_syscall_exit(K_SYSCALL_ZEPHYR_WRITE_STDOUT, zephyr_write_stdout, buf, nbytes, retval); 	retval; })
@@ -82,7 +82,7 @@ static inline int zephyr_fputc(int c, FILE * stream)
 	return z_impl_zephyr_fputc(c, stream);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define zephyr_fputc(c, stream) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ZEPHYR_FPUTC, zephyr_fputc, c, stream); 	retval = zephyr_fputc(c, stream); 	sys_port_trace_syscall_exit(K_SYSCALL_ZEPHYR_FPUTC, zephyr_fputc, c, stream, retval); 	retval; })
@@ -108,7 +108,7 @@ static inline size_t zephyr_fwrite(const void *ZRESTRICT ptr, size_t size, size_
 	return z_impl_zephyr_fwrite(ptr, size, nitems, stream);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define zephyr_fwrite(ptr, size, nitems, stream) ({ 	size_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ZEPHYR_FWRITE, zephyr_fwrite, ptr, size, nitems, stream); 	retval = zephyr_fwrite(ptr, size, nitems, stream); 	sys_port_trace_syscall_exit(K_SYSCALL_ZEPHYR_FWRITE, zephyr_fwrite, ptr, size, nitems, stream, retval); 	retval; })

@@ -34,7 +34,7 @@ static inline int can_get_core_clock(const struct device * dev, uint32_t * rate)
 	return z_impl_can_get_core_clock(dev, rate);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_get_core_clock(dev, rate) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_CORE_CLOCK, can_get_core_clock, dev, rate); 	retval = can_get_core_clock(dev, rate); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_CORE_CLOCK, can_get_core_clock, dev, rate, retval); 	retval; })
@@ -58,7 +58,7 @@ static inline int can_get_max_bitrate(const struct device * dev, uint32_t * max_
 	return z_impl_can_get_max_bitrate(dev, max_bitrate);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_get_max_bitrate(dev, max_bitrate) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_MAX_BITRATE, can_get_max_bitrate, dev, max_bitrate); 	retval = can_get_max_bitrate(dev, max_bitrate); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_MAX_BITRATE, can_get_max_bitrate, dev, max_bitrate, retval); 	retval; })
@@ -81,7 +81,7 @@ static inline const struct can_timing * can_get_timing_min(const struct device *
 	return z_impl_can_get_timing_min(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_get_timing_min(dev) ({ 	const struct can_timing * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_TIMING_MIN, can_get_timing_min, dev); 	retval = can_get_timing_min(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_TIMING_MIN, can_get_timing_min, dev, retval); 	retval; })
@@ -104,7 +104,7 @@ static inline const struct can_timing * can_get_timing_max(const struct device *
 	return z_impl_can_get_timing_max(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_get_timing_max(dev) ({ 	const struct can_timing * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_TIMING_MAX, can_get_timing_max, dev); 	retval = can_get_timing_max(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_TIMING_MAX, can_get_timing_max, dev, retval); 	retval; })
@@ -130,7 +130,7 @@ static inline int can_calc_timing(const struct device * dev, struct can_timing *
 	return z_impl_can_calc_timing(dev, res, bitrate, sample_pnt);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_calc_timing(dev, res, bitrate, sample_pnt) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_CALC_TIMING, can_calc_timing, dev, res, bitrate, sample_pnt); 	retval = can_calc_timing(dev, res, bitrate, sample_pnt); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_CALC_TIMING, can_calc_timing, dev, res, bitrate, sample_pnt, retval); 	retval; })
@@ -153,7 +153,7 @@ static inline const struct can_timing * can_get_timing_data_min(const struct dev
 	return z_impl_can_get_timing_data_min(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_get_timing_data_min(dev) ({ 	const struct can_timing * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_TIMING_DATA_MIN, can_get_timing_data_min, dev); 	retval = can_get_timing_data_min(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_TIMING_DATA_MIN, can_get_timing_data_min, dev, retval); 	retval; })
@@ -176,7 +176,7 @@ static inline const struct can_timing * can_get_timing_data_max(const struct dev
 	return z_impl_can_get_timing_data_max(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_get_timing_data_max(dev) ({ 	const struct can_timing * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_TIMING_DATA_MAX, can_get_timing_data_max, dev); 	retval = can_get_timing_data_max(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_TIMING_DATA_MAX, can_get_timing_data_max, dev, retval); 	retval; })
@@ -202,7 +202,7 @@ static inline int can_calc_timing_data(const struct device * dev, struct can_tim
 	return z_impl_can_calc_timing_data(dev, res, bitrate, sample_pnt);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_calc_timing_data(dev, res, bitrate, sample_pnt) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_CALC_TIMING_DATA, can_calc_timing_data, dev, res, bitrate, sample_pnt); 	retval = can_calc_timing_data(dev, res, bitrate, sample_pnt); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_CALC_TIMING_DATA, can_calc_timing_data, dev, res, bitrate, sample_pnt, retval); 	retval; })
@@ -226,7 +226,7 @@ static inline int can_set_timing_data(const struct device * dev, const struct ca
 	return z_impl_can_set_timing_data(dev, timing_data);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_set_timing_data(dev, timing_data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_SET_TIMING_DATA, can_set_timing_data, dev, timing_data); 	retval = can_set_timing_data(dev, timing_data); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_SET_TIMING_DATA, can_set_timing_data, dev, timing_data, retval); 	retval; })
@@ -250,7 +250,7 @@ static inline int can_set_bitrate_data(const struct device * dev, uint32_t bitra
 	return z_impl_can_set_bitrate_data(dev, bitrate_data);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_set_bitrate_data(dev, bitrate_data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_SET_BITRATE_DATA, can_set_bitrate_data, dev, bitrate_data); 	retval = can_set_bitrate_data(dev, bitrate_data); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_SET_BITRATE_DATA, can_set_bitrate_data, dev, bitrate_data, retval); 	retval; })
@@ -274,7 +274,7 @@ static inline int can_set_timing(const struct device * dev, const struct can_tim
 	return z_impl_can_set_timing(dev, timing);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_set_timing(dev, timing) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_SET_TIMING, can_set_timing, dev, timing); 	retval = can_set_timing(dev, timing); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_SET_TIMING, can_set_timing, dev, timing, retval); 	retval; })
@@ -298,56 +298,10 @@ static inline int can_get_capabilities(const struct device * dev, can_mode_t * c
 	return z_impl_can_get_capabilities(dev, cap);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_get_capabilities(dev, cap) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_CAPABILITIES, can_get_capabilities, dev, cap); 	retval = can_get_capabilities(dev, cap); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_CAPABILITIES, can_get_capabilities, dev, cap, retval); 	retval; })
-#endif
-#endif
-
-
-extern int z_impl_can_start(const struct device * dev);
-
-__pinned_func
-static inline int can_start(const struct device * dev)
-{
-#ifdef CONFIG_USERSPACE
-	if (z_syscall_trap()) {
-		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
-		return (int) arch_syscall_invoke1(parm0.x, K_SYSCALL_CAN_START);
-	}
-#endif
-	compiler_barrier();
-	return z_impl_can_start(dev);
-}
-
-#if defined(CONFIG_TRACING_SYSCALL)
-#ifndef DISABLE_SYSCALL_TRACING
-
-#define can_start(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_START, can_start, dev); 	retval = can_start(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_START, can_start, dev, retval); 	retval; })
-#endif
-#endif
-
-
-extern int z_impl_can_stop(const struct device * dev);
-
-__pinned_func
-static inline int can_stop(const struct device * dev)
-{
-#ifdef CONFIG_USERSPACE
-	if (z_syscall_trap()) {
-		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
-		return (int) arch_syscall_invoke1(parm0.x, K_SYSCALL_CAN_STOP);
-	}
-#endif
-	compiler_barrier();
-	return z_impl_can_stop(dev);
-}
-
-#if defined(CONFIG_TRACING_SYSCALL)
-#ifndef DISABLE_SYSCALL_TRACING
-
-#define can_stop(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_STOP, can_stop, dev); 	retval = can_stop(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_STOP, can_stop, dev, retval); 	retval; })
 #endif
 #endif
 
@@ -368,7 +322,7 @@ static inline int can_set_mode(const struct device * dev, can_mode_t mode)
 	return z_impl_can_set_mode(dev, mode);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_set_mode(dev, mode) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_SET_MODE, can_set_mode, dev, mode); 	retval = can_set_mode(dev, mode); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_SET_MODE, can_set_mode, dev, mode, retval); 	retval; })
@@ -392,7 +346,7 @@ static inline int can_set_bitrate(const struct device * dev, uint32_t bitrate)
 	return z_impl_can_set_bitrate(dev, bitrate);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_set_bitrate(dev, bitrate) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_SET_BITRATE, can_set_bitrate, dev, bitrate); 	retval = can_set_bitrate(dev, bitrate); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_SET_BITRATE, can_set_bitrate, dev, bitrate, retval); 	retval; })
@@ -400,15 +354,15 @@ static inline int can_set_bitrate(const struct device * dev, uint32_t bitrate)
 #endif
 
 
-extern int z_impl_can_send(const struct device * dev, const struct can_frame * frame, k_timeout_t timeout, can_tx_callback_t callback, void * user_data);
+extern int z_impl_can_send(const struct device * dev, const struct zcan_frame * frame, k_timeout_t timeout, can_tx_callback_t callback, void * user_data);
 
 __pinned_func
-static inline int can_send(const struct device * dev, const struct can_frame * frame, k_timeout_t timeout, can_tx_callback_t callback, void * user_data)
+static inline int can_send(const struct device * dev, const struct zcan_frame * frame, k_timeout_t timeout, can_tx_callback_t callback, void * user_data)
 {
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
-		union { uintptr_t x; const struct can_frame * val; } parm1 = { .val = frame };
+		union { uintptr_t x; const struct zcan_frame * val; } parm1 = { .val = frame };
 		union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2 = { .val = timeout };
 		union { uintptr_t x; can_tx_callback_t val; } parm3 = { .val = callback };
 		union { uintptr_t x; void * val; } parm4 = { .val = user_data };
@@ -419,7 +373,7 @@ static inline int can_send(const struct device * dev, const struct can_frame * f
 	return z_impl_can_send(dev, frame, timeout, callback, user_data);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_send(dev, frame, timeout, callback, user_data) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_SEND, can_send, dev, frame, timeout, callback, user_data); 	retval = can_send(dev, frame, timeout, callback, user_data); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_SEND, can_send, dev, frame, timeout, callback, user_data, retval); 	retval; })
@@ -427,16 +381,16 @@ static inline int can_send(const struct device * dev, const struct can_frame * f
 #endif
 
 
-extern int z_impl_can_add_rx_filter_msgq(const struct device * dev, struct k_msgq * msgq, const struct can_filter * filter);
+extern int z_impl_can_add_rx_filter_msgq(const struct device * dev, struct k_msgq * msgq, const struct zcan_filter * filter);
 
 __pinned_func
-static inline int can_add_rx_filter_msgq(const struct device * dev, struct k_msgq * msgq, const struct can_filter * filter)
+static inline int can_add_rx_filter_msgq(const struct device * dev, struct k_msgq * msgq, const struct zcan_filter * filter)
 {
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
 		union { uintptr_t x; struct k_msgq * val; } parm1 = { .val = msgq };
-		union { uintptr_t x; const struct can_filter * val; } parm2 = { .val = filter };
+		union { uintptr_t x; const struct zcan_filter * val; } parm2 = { .val = filter };
 		return (int) arch_syscall_invoke3(parm0.x, parm1.x, parm2.x, K_SYSCALL_CAN_ADD_RX_FILTER_MSGQ);
 	}
 #endif
@@ -444,7 +398,7 @@ static inline int can_add_rx_filter_msgq(const struct device * dev, struct k_msg
 	return z_impl_can_add_rx_filter_msgq(dev, msgq, filter);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_add_rx_filter_msgq(dev, msgq, filter) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_ADD_RX_FILTER_MSGQ, can_add_rx_filter_msgq, dev, msgq, filter); 	retval = can_add_rx_filter_msgq(dev, msgq, filter); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_ADD_RX_FILTER_MSGQ, can_add_rx_filter_msgq, dev, msgq, filter, retval); 	retval; })
@@ -469,7 +423,7 @@ static inline void can_remove_rx_filter(const struct device * dev, int filter_id
 	z_impl_can_remove_rx_filter(dev, filter_id);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_remove_rx_filter(dev, filter_id) do { 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_REMOVE_RX_FILTER, can_remove_rx_filter, dev, filter_id); 	can_remove_rx_filter(dev, filter_id); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_REMOVE_RX_FILTER, can_remove_rx_filter, dev, filter_id); } while(false)
@@ -477,26 +431,26 @@ static inline void can_remove_rx_filter(const struct device * dev, int filter_id
 #endif
 
 
-extern int z_impl_can_get_max_filters(const struct device * dev, bool ide);
+extern int z_impl_can_get_max_filters(const struct device * dev, enum can_ide id_type);
 
 __pinned_func
-static inline int can_get_max_filters(const struct device * dev, bool ide)
+static inline int can_get_max_filters(const struct device * dev, enum can_ide id_type)
 {
 #ifdef CONFIG_USERSPACE
 	if (z_syscall_trap()) {
 		union { uintptr_t x; const struct device * val; } parm0 = { .val = dev };
-		union { uintptr_t x; bool val; } parm1 = { .val = ide };
+		union { uintptr_t x; enum can_ide val; } parm1 = { .val = id_type };
 		return (int) arch_syscall_invoke2(parm0.x, parm1.x, K_SYSCALL_CAN_GET_MAX_FILTERS);
 	}
 #endif
 	compiler_barrier();
-	return z_impl_can_get_max_filters(dev, ide);
+	return z_impl_can_get_max_filters(dev, id_type);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
-#define can_get_max_filters(dev, ide) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_MAX_FILTERS, can_get_max_filters, dev, ide); 	retval = can_get_max_filters(dev, ide); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_MAX_FILTERS, can_get_max_filters, dev, ide, retval); 	retval; })
+#define can_get_max_filters(dev, id_type) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_MAX_FILTERS, can_get_max_filters, dev, id_type); 	retval = can_get_max_filters(dev, id_type); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_MAX_FILTERS, can_get_max_filters, dev, id_type, retval); 	retval; })
 #endif
 #endif
 
@@ -518,7 +472,7 @@ static inline int can_get_state(const struct device * dev, enum can_state * stat
 	return z_impl_can_get_state(dev, state, err_cnt);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_get_state(dev, state, err_cnt) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_GET_STATE, can_get_state, dev, state, err_cnt); 	retval = can_get_state(dev, state, err_cnt); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_GET_STATE, can_get_state, dev, state, err_cnt, retval); 	retval; })
@@ -542,7 +496,7 @@ static inline int can_recover(const struct device * dev, k_timeout_t timeout)
 	return z_impl_can_recover(dev, timeout);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define can_recover(dev, timeout) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CAN_RECOVER, can_recover, dev, timeout); 	retval = can_recover(dev, timeout); 	sys_port_trace_syscall_exit(K_SYSCALL_CAN_RECOVER, can_recover, dev, timeout, retval); 	retval; })

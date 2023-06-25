@@ -14,12 +14,11 @@
 		zephyr,bt-mon-uart = &uart0;
 		zephyr,bt-c2h-uart = &uart0;
 		zephyr,bt-hci-rpmsg-ipc = &ipc0;
-		zephyr,ieee802154 = &ieee802154;
 		zephyr,ipc_shm = &sram0_shared;
 		zephyr,sram = &sram0_ns;
 		zephyr,flash = &flash0;
 		zephyr,code-partition = &slot0_ns_partition;
-		zephyr,display = &ssd1306_ssd1306_128x32;
+		zephyr,display = &ssd1306;
 	};
 	aliases {
 		led0 = &led0;
@@ -142,7 +141,7 @@
 				pinctrl-1 = < &i2c1_sleep >;
 				pinctrl-names = "default", "sleep";
 				zephyr,concat-buf-size = < 0x1000 >;
-				ssd1306_ssd1306_128x32: ssd1306: ssd1306@3c {
+				ssd1306: ssd1306@3c {
 					compatible = "solomon,ssd1306fb";
 					reg = < 0x3c >;
 					width = < 0x80 >;
@@ -551,9 +550,6 @@
 				port = < 0x1 >;
 				phandle = < 0x12 >;
 			};
-			ieee802154: ieee802154 {
-				compatible = "nordic,nrf-ieee802154";
-			};
 		};
 		gpiote1: gpiote: gpiote@4002f000 {
 			compatible = "nordic,nrf-gpiote";
@@ -701,6 +697,7 @@
 	cryptocell_sw: cryptocell-sw {
 		compatible = "nordic,nrf-cc312-sw";
 		#address-cells = < 0x0 >;
+		label = "CRYPTOCELL_SW";
 		status = "okay";
 	};
 	leds {

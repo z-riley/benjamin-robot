@@ -34,7 +34,7 @@ static inline size_t ivshmem_get_mem(const struct device * dev, uintptr_t * memm
 	return z_impl_ivshmem_get_mem(dev, memmap);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ivshmem_get_mem(dev, memmap) ({ 	size_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_IVSHMEM_GET_MEM, ivshmem_get_mem, dev, memmap); 	retval = ivshmem_get_mem(dev, memmap); 	sys_port_trace_syscall_exit(K_SYSCALL_IVSHMEM_GET_MEM, ivshmem_get_mem, dev, memmap, retval); 	retval; })
@@ -57,7 +57,7 @@ static inline uint32_t ivshmem_get_id(const struct device * dev)
 	return z_impl_ivshmem_get_id(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ivshmem_get_id(dev) ({ 	uint32_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_IVSHMEM_GET_ID, ivshmem_get_id, dev); 	retval = ivshmem_get_id(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_IVSHMEM_GET_ID, ivshmem_get_id, dev, retval); 	retval; })
@@ -80,7 +80,7 @@ static inline uint16_t ivshmem_get_vectors(const struct device * dev)
 	return z_impl_ivshmem_get_vectors(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ivshmem_get_vectors(dev) ({ 	uint16_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_IVSHMEM_GET_VECTORS, ivshmem_get_vectors, dev); 	retval = ivshmem_get_vectors(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_IVSHMEM_GET_VECTORS, ivshmem_get_vectors, dev, retval); 	retval; })
@@ -105,7 +105,7 @@ static inline int ivshmem_int_peer(const struct device * dev, uint32_t peer_id, 
 	return z_impl_ivshmem_int_peer(dev, peer_id, vector);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ivshmem_int_peer(dev, peer_id, vector) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_IVSHMEM_INT_PEER, ivshmem_int_peer, dev, peer_id, vector); 	retval = ivshmem_int_peer(dev, peer_id, vector); 	sys_port_trace_syscall_exit(K_SYSCALL_IVSHMEM_INT_PEER, ivshmem_int_peer, dev, peer_id, vector, retval); 	retval; })
@@ -130,7 +130,7 @@ static inline int ivshmem_register_handler(const struct device * dev, struct k_p
 	return z_impl_ivshmem_register_handler(dev, signal, vector);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ivshmem_register_handler(dev, signal, vector) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_IVSHMEM_REGISTER_HANDLER, ivshmem_register_handler, dev, signal, vector); 	retval = ivshmem_register_handler(dev, signal, vector); 	sys_port_trace_syscall_exit(K_SYSCALL_IVSHMEM_REGISTER_HANDLER, ivshmem_register_handler, dev, signal, vector, retval); 	retval; })

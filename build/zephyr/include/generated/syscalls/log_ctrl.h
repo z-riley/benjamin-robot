@@ -33,7 +33,7 @@ static inline void log_panic(void)
 	z_impl_log_panic();
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define log_panic() do { 	sys_port_trace_syscall_enter(K_SYSCALL_LOG_PANIC, log_panic); 	log_panic(); 	sys_port_trace_syscall_exit(K_SYSCALL_LOG_PANIC, log_panic); } while(false)
@@ -55,7 +55,7 @@ static inline bool log_process(void)
 	return z_impl_log_process();
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define log_process() ({ 	bool retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LOG_PROCESS, log_process); 	retval = log_process(); 	sys_port_trace_syscall_exit(K_SYSCALL_LOG_PROCESS, log_process, retval); 	retval; })
@@ -77,7 +77,7 @@ static inline uint32_t log_buffered_cnt(void)
 	return z_impl_log_buffered_cnt();
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define log_buffered_cnt() ({ 	uint32_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LOG_BUFFERED_CNT, log_buffered_cnt); 	retval = log_buffered_cnt(); 	sys_port_trace_syscall_exit(K_SYSCALL_LOG_BUFFERED_CNT, log_buffered_cnt, retval); 	retval; })
@@ -103,7 +103,7 @@ static inline uint32_t log_filter_set(struct log_backend const *const backend, u
 	return z_impl_log_filter_set(backend, domain_id, source_id, level);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define log_filter_set(backend, domain_id, source_id, level) ({ 	uint32_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_LOG_FILTER_SET, log_filter_set, backend, domain_id, source_id, level); 	retval = log_filter_set(backend, domain_id, source_id, level); 	sys_port_trace_syscall_exit(K_SYSCALL_LOG_FILTER_SET, log_filter_set, backend, domain_id, source_id, level, retval); 	retval; })

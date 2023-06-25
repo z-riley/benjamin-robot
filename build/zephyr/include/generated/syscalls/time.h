@@ -34,7 +34,7 @@ static inline int clock_gettime(clockid_t clock_id, struct timespec * ts)
 	return z_impl_clock_gettime(clock_id, ts);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define clock_gettime(clock_id, ts) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_CLOCK_GETTIME, clock_gettime, clock_id, ts); 	retval = clock_gettime(clock_id, ts); 	sys_port_trace_syscall_exit(K_SYSCALL_CLOCK_GETTIME, clock_gettime, clock_id, ts, retval); 	retval; })

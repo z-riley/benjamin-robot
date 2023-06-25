@@ -34,7 +34,7 @@ static inline void * flash_simulator_get_memory(const struct device * dev, size_
 	return z_impl_flash_simulator_get_memory(dev, mock_size);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_simulator_get_memory(dev, mock_size) ({ 	void * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_SIMULATOR_GET_MEMORY, flash_simulator_get_memory, dev, mock_size); 	retval = flash_simulator_get_memory(dev, mock_size); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_SIMULATOR_GET_MEMORY, flash_simulator_get_memory, dev, mock_size, retval); 	retval; })

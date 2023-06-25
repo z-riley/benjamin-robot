@@ -34,7 +34,7 @@ static inline int adc_channel_setup(const struct device * dev, const struct adc_
 	return z_impl_adc_channel_setup(dev, channel_cfg);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define adc_channel_setup(dev, channel_cfg) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ADC_CHANNEL_SETUP, adc_channel_setup, dev, channel_cfg); 	retval = adc_channel_setup(dev, channel_cfg); 	sys_port_trace_syscall_exit(K_SYSCALL_ADC_CHANNEL_SETUP, adc_channel_setup, dev, channel_cfg, retval); 	retval; })
@@ -58,7 +58,7 @@ static inline int adc_read(const struct device * dev, const struct adc_sequence 
 	return z_impl_adc_read(dev, sequence);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define adc_read(dev, sequence) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ADC_READ, adc_read, dev, sequence); 	retval = adc_read(dev, sequence); 	sys_port_trace_syscall_exit(K_SYSCALL_ADC_READ, adc_read, dev, sequence, retval); 	retval; })
@@ -83,7 +83,7 @@ static inline int adc_read_async(const struct device * dev, const struct adc_seq
 	return z_impl_adc_read_async(dev, sequence, async);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define adc_read_async(dev, sequence, async) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ADC_READ_ASYNC, adc_read_async, dev, sequence, async); 	retval = adc_read_async(dev, sequence, async); 	sys_port_trace_syscall_exit(K_SYSCALL_ADC_READ_ASYNC, adc_read_async, dev, sequence, async, retval); 	retval; })

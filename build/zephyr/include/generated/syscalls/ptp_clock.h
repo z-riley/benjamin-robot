@@ -34,7 +34,7 @@ static inline int ptp_clock_get(const struct device * dev, struct net_ptp_time *
 	return z_impl_ptp_clock_get(dev, tm);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ptp_clock_get(dev, tm) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_PTP_CLOCK_GET, ptp_clock_get, dev, tm); 	retval = ptp_clock_get(dev, tm); 	sys_port_trace_syscall_exit(K_SYSCALL_PTP_CLOCK_GET, ptp_clock_get, dev, tm, retval); 	retval; })

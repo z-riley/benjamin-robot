@@ -2,7 +2,7 @@
 
 #include <syscalls/can.h>
 
-extern int z_vrfy_can_add_rx_filter_msgq(const struct device * dev, struct k_msgq * msgq, const struct can_filter * filter);
+extern int z_vrfy_can_add_rx_filter_msgq(const struct device * dev, struct k_msgq * msgq, const struct zcan_filter * filter);
 uintptr_t z_mrsh_can_add_rx_filter_msgq(uintptr_t arg0, uintptr_t arg1, uintptr_t arg2,
 		uintptr_t arg3, uintptr_t arg4, uintptr_t arg5, void *ssf)
 {
@@ -14,7 +14,7 @@ uintptr_t z_mrsh_can_add_rx_filter_msgq(uintptr_t arg0, uintptr_t arg1, uintptr_
 	parm0.x = arg0;
 	union { uintptr_t x; struct k_msgq * val; } parm1;
 	parm1.x = arg1;
-	union { uintptr_t x; const struct can_filter * val; } parm2;
+	union { uintptr_t x; const struct zcan_filter * val; } parm2;
 	parm2.x = arg2;
 	int ret = z_vrfy_can_add_rx_filter_msgq(parm0.val, parm1.val, parm2.val);
 	_current->syscall_frame = NULL;

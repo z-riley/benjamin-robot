@@ -34,7 +34,7 @@ static inline int dac_channel_setup(const struct device * dev, const struct dac_
 	return z_impl_dac_channel_setup(dev, channel_cfg);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define dac_channel_setup(dev, channel_cfg) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_DAC_CHANNEL_SETUP, dac_channel_setup, dev, channel_cfg); 	retval = dac_channel_setup(dev, channel_cfg); 	sys_port_trace_syscall_exit(K_SYSCALL_DAC_CHANNEL_SETUP, dac_channel_setup, dev, channel_cfg, retval); 	retval; })
@@ -59,7 +59,7 @@ static inline int dac_write_value(const struct device * dev, uint8_t channel, ui
 	return z_impl_dac_write_value(dev, channel, value);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define dac_write_value(dev, channel, value) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_DAC_WRITE_VALUE, dac_write_value, dev, channel, value); 	retval = dac_write_value(dev, channel, value); 	sys_port_trace_syscall_exit(K_SYSCALL_DAC_WRITE_VALUE, dac_write_value, dev, channel, value, retval); 	retval; })

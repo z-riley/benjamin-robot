@@ -35,7 +35,7 @@ static inline void k_object_access_grant(const void * object, struct k_thread * 
 	z_impl_k_object_access_grant(object, thread);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define k_object_access_grant(object, thread) do { 	sys_port_trace_syscall_enter(K_SYSCALL_K_OBJECT_ACCESS_GRANT, k_object_access_grant, object, thread); 	k_object_access_grant(object, thread); 	sys_port_trace_syscall_exit(K_SYSCALL_K_OBJECT_ACCESS_GRANT, k_object_access_grant, object, thread); } while(false)
@@ -59,7 +59,7 @@ static inline void k_object_release(const void * object)
 	z_impl_k_object_release(object);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define k_object_release(object) do { 	sys_port_trace_syscall_enter(K_SYSCALL_K_OBJECT_RELEASE, k_object_release, object); 	k_object_release(object); 	sys_port_trace_syscall_exit(K_SYSCALL_K_OBJECT_RELEASE, k_object_release, object); } while(false)
@@ -82,7 +82,7 @@ static inline void * k_object_alloc(enum k_objects otype)
 	return z_impl_k_object_alloc(otype);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define k_object_alloc(otype) ({ 	void * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_K_OBJECT_ALLOC, k_object_alloc, otype); 	retval = k_object_alloc(otype); 	sys_port_trace_syscall_exit(K_SYSCALL_K_OBJECT_ALLOC, k_object_alloc, otype, retval); 	retval; })

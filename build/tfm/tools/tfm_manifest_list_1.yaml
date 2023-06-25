@@ -24,7 +24,7 @@
     {
       "name": "Non-Secure Mailbox Agent",
       "short_name": "TFM_NS_AGENT_MAILBOX",
-      "manifest": "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/ns_agent_mailbox/ns_agent_mailbox.yaml",
+      "manifest": "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/ns_agent_mailbox/ns_agent_mailbox.yaml",
       "output_path": "secure_fw/partitions/ns_agent_mailbox",
       "conditional": "OFF",
       "version_major": 0,
@@ -39,7 +39,7 @@
     {
       "name": "Protected Storage Service",
       "short_name": "TFM_SP_PS",
-      "manifest": "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/protected_storage/tfm_protected_storage.yaml",
+      "manifest": "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/protected_storage/tfm_protected_storage.yaml",
       "output_path": "secure_fw/partitions/protected_storage",
       "conditional": "OFF",
       "version_major": 0,
@@ -54,7 +54,7 @@
     {
       "name": "TF-M Internal Trusted Storage Service",
       "short_name": "TFM_SP_ITS",
-      "manifest": "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/internal_trusted_storage/tfm_internal_trusted_storage.yaml",
+      "manifest": "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/internal_trusted_storage/tfm_internal_trusted_storage.yaml",
       "output_path": "secure_fw/partitions/internal_trusted_storage",
       "conditional": "OFF",
       "version_major": 0,
@@ -69,7 +69,7 @@
     {
       "name": "TFM Audit Log Service",
       "short_name": "TFM_SP_AUDIT_LOG",
-      "manifest": "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/audit_logging/tfm_audit_logging.yaml",
+      "manifest": "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/audit_logging/tfm_audit_logging.yaml",
       "output_path": "secure_fw/partitions/audit_logging",
       "conditional": "OFF",
       "version_major": 0,
@@ -84,7 +84,7 @@
     {
       "name": "TFM Crypto Service",
       "short_name": "TFM_SP_CRYPTO",
-      "manifest": "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/crypto/tfm_crypto.yaml",
+      "manifest": "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/crypto/tfm_crypto.yaml",
       "output_path": "secure_fw/partitions/crypto",
       "conditional": "ON",
       "version_major": 0,
@@ -99,7 +99,7 @@
     {
       "name": "TFM Platform Service",
       "short_name": "TFM_SP_PLATFORM",
-      "manifest": "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/platform/tfm_platform.yaml",
+      "manifest": "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/platform/tfm_platform.yaml",
       "output_path": "secure_fw/partitions/platform",
       "conditional": "ON",
       "version_major": 0,
@@ -114,7 +114,7 @@
     {
       "name": "TFM Initial Attestation Service",
       "short_name": "TFM_SP_INITIAL_ATTESTATION",
-      "manifest": "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/initial_attestation/tfm_initial_attestation.yaml",
+      "manifest": "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/initial_attestation/tfm_initial_attestation.yaml",
       "output_path": "secure_fw/partitions/initial_attestation",
       "conditional": "OFF",
       "version_major": 0,
@@ -129,7 +129,7 @@
     {
       "name": "TF-M PSA Proxy Service",
       "short_name": "TFM_SP_PSA_PROXY",
-      "manifest": "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/psa_proxy/tfm_psa_proxy.yaml",
+      "manifest": "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/psa_proxy/tfm_psa_proxy.yaml",
       "output_path": "secure_fw/partitions/psa_proxy",
       "tfm_extensions": true,
       "conditional": "OFF",
@@ -145,7 +145,7 @@
     {
       "name": "TFM Firmware Update Service",
       "short_name": "TFM_SP_FWU",
-      "manifest": "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/firmware_update/tfm_firmware_update.yaml",
+      "manifest": "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/firmware_update/tfm_firmware_update.yaml",
       "output_path": "secure_fw/partitions/firmware_update",
       "conditional": "OFF",
       "version_major": 0,

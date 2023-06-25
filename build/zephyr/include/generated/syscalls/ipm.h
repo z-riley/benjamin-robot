@@ -37,7 +37,7 @@ static inline int ipm_send(const struct device * ipmdev, int wait, uint32_t id, 
 	return z_impl_ipm_send(ipmdev, wait, id, data, size);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ipm_send(ipmdev, wait, id, data, size) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_IPM_SEND, ipm_send, ipmdev, wait, id, data, size); 	retval = ipm_send(ipmdev, wait, id, data, size); 	sys_port_trace_syscall_exit(K_SYSCALL_IPM_SEND, ipm_send, ipmdev, wait, id, data, size, retval); 	retval; })
@@ -60,7 +60,7 @@ static inline int ipm_max_data_size_get(const struct device * ipmdev)
 	return z_impl_ipm_max_data_size_get(ipmdev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ipm_max_data_size_get(ipmdev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_IPM_MAX_DATA_SIZE_GET, ipm_max_data_size_get, ipmdev); 	retval = ipm_max_data_size_get(ipmdev); 	sys_port_trace_syscall_exit(K_SYSCALL_IPM_MAX_DATA_SIZE_GET, ipm_max_data_size_get, ipmdev, retval); 	retval; })
@@ -83,7 +83,7 @@ static inline uint32_t ipm_max_id_val_get(const struct device * ipmdev)
 	return z_impl_ipm_max_id_val_get(ipmdev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ipm_max_id_val_get(ipmdev) ({ 	uint32_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_IPM_MAX_ID_VAL_GET, ipm_max_id_val_get, ipmdev); 	retval = ipm_max_id_val_get(ipmdev); 	sys_port_trace_syscall_exit(K_SYSCALL_IPM_MAX_ID_VAL_GET, ipm_max_id_val_get, ipmdev, retval); 	retval; })
@@ -107,7 +107,7 @@ static inline int ipm_set_enabled(const struct device * ipmdev, int enable)
 	return z_impl_ipm_set_enabled(ipmdev, enable);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ipm_set_enabled(ipmdev, enable) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_IPM_SET_ENABLED, ipm_set_enabled, ipmdev, enable); 	retval = ipm_set_enabled(ipmdev, enable); 	sys_port_trace_syscall_exit(K_SYSCALL_IPM_SET_ENABLED, ipm_set_enabled, ipmdev, enable, retval); 	retval; })
@@ -131,7 +131,7 @@ static inline void ipm_complete(const struct device * ipmdev)
 	z_impl_ipm_complete(ipmdev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define ipm_complete(ipmdev) do { 	sys_port_trace_syscall_enter(K_SYSCALL_IPM_COMPLETE, ipm_complete, ipmdev); 	ipm_complete(ipmdev); 	sys_port_trace_syscall_exit(K_SYSCALL_IPM_COMPLETE, ipm_complete, ipmdev); } while(false)

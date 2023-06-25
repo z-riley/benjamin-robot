@@ -2,14 +2,14 @@
 
 #include <syscalls/can.h>
 
-extern int z_vrfy_can_send(const struct device * dev, const struct can_frame * frame, k_timeout_t timeout, can_tx_callback_t callback, void * user_data);
+extern int z_vrfy_can_send(const struct device * dev, const struct zcan_frame * frame, k_timeout_t timeout, can_tx_callback_t callback, void * user_data);
 uintptr_t z_mrsh_can_send(uintptr_t arg0, uintptr_t arg1, uintptr_t arg2,
 		uintptr_t arg3, uintptr_t arg4, uintptr_t arg5, void *ssf)
 {
 	_current->syscall_frame = ssf;
 	union { uintptr_t x; const struct device * val; } parm0;
 	parm0.x = arg0;
-	union { uintptr_t x; const struct can_frame * val; } parm1;
+	union { uintptr_t x; const struct zcan_frame * val; } parm1;
 	parm1.x = arg1;
 	union { struct { uintptr_t lo, hi; } split; k_timeout_t val; } parm2;
 	parm2.split.lo = arg2;

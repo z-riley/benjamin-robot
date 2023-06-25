@@ -1,4 +1,4 @@
-# Install script for directory: C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m
+# Install script for directory: C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/ncs/toolchains/v2.2.0/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/ncs/toolchains/v2.1.2/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -101,8 +101,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include/psa" TYPE FILE MESSAGE_NEVER FILES
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/client.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/error.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/client.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/error.h"
     )
 endif()
 
@@ -128,9 +128,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include" TYPE FILE MESSAGE_NEVER FILES
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_api.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_ns_interface.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa_config.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_api.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_ns_interface.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa_config.h"
     )
 endif()
 
@@ -143,7 +143,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_ns_client_ext.h")
+file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_ns_client_ext.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -155,7 +155,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_psa_call_pack.h")
+file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_psa_call_pack.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -168,14 +168,14 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include/psa" TYPE FILE MESSAGE_NEVER FILES
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_extra.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_compat.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_client_struct.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_sizes.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_struct.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_types.h"
-    "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_values.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_extra.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_compat.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_client_struct.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_sizes.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_struct.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_types.h"
+    "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/psa/crypto_values.h"
     )
 endif()
 
@@ -188,7 +188,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_crypto_defs.h")
+file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_crypto_defs.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -200,7 +200,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_platform_api.h")
+file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/include" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/include/tfm_platform_api.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -212,7 +212,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/src" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/src/tfm_psa_ns_api.c")
+file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/src" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/src/tfm_psa_ns_api.c")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -224,7 +224,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/src" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/src/tfm_ns_interface.c.example")
+file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/src" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/src/tfm_ns_interface.c.example")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -236,7 +236,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/src" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/src/tfm_crypto_ipc_api.c")
+file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/src" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/src/tfm_crypto_ipc_api.c")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -248,7 +248,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/src" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/interface/src/tfm_platform_ipc_api.c")
+file(INSTALL DESTINATION "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/tfm/install/interface/src" TYPE FILE MESSAGE_NEVER FILES "C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/interface/src/tfm_platform_ipc_api.c")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

@@ -1,7 +1,7 @@
-# 0 "C:/ncs/v2.2.0/zephyr/misc/empty_file.c"
-# 0 "<built-in>"
-# 0 "<command-line>"
-# 1 "C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet.dts" 1
+# 1 "C:/ncs/v2.1.2/zephyr/misc/empty_file.c"
+# 1 "<built-in>"
+# 1 "<command-line>"
+# 1 "C:/ncs/v2.1.2/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet.dts" 1
 
 
 
@@ -9,34 +9,34 @@
 
 
 /dts-v1/;
-# 1 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf5340_cpunet_qkaa.dtsi" 1 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf5340_cpunet_qkaa.dtsi" 1 3 4
 
 
 
 
 
 
-# 1 "C:/ncs/v2.2.0/zephyr/dts/common/mem.h" 1 3 4
-# 8 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf5340_cpunet_qkaa.dtsi" 2 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf5340_cpunet.dtsi" 1 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/dts/common/mem.h" 1 3 4
+# 8 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf5340_cpunet_qkaa.dtsi" 2 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf5340_cpunet.dtsi" 1 3 4
 
 
 
 
 
 
-# 1 "C:/ncs/v2.2.0/zephyr/dts/arm/armv8-m.dtsi" 1 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/dts/arm/armv8-m.dtsi" 1 3 4
 
 
-# 1 "C:/ncs/v2.2.0/zephyr/dts/common/skeleton.dtsi" 1 3 4
-# 9 "C:/ncs/v2.2.0/zephyr/dts/common/skeleton.dtsi" 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/dts/common/skeleton.dtsi" 1 3 4
+# 9 "C:/ncs/v2.1.2/zephyr/dts/common/skeleton.dtsi" 3 4
 / {
  #address-cells = <1>;
  #size-cells = <1>;
  chosen { };
  aliases { };
 };
-# 4 "C:/ncs/v2.2.0/zephyr/dts/arm/armv8-m.dtsi" 2 3 4
+# 4 "C:/ncs/v2.1.2/zephyr/dts/arm/armv8-m.dtsi" 2 3 4
 
 / {
  soc {
@@ -60,44 +60,44 @@
   };
  };
 };
-# 8 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf5340_cpunet.dtsi" 2 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 1 3 4
+# 8 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf5340_cpunet.dtsi" 2 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 1 3 4
 
 
 
 
 
 
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/adc/adc.h" 1 3 4
-# 8 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h" 1 3 4
-# 10 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h" 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/dt-util.h" 1 3 4
-# 19 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/dt-util.h" 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/sys/util_macro.h" 1 3 4
-# 34 "C:/ncs/v2.2.0/zephyr/include/zephyr/sys/util_macro.h" 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/sys/util_internal.h" 1 3 4
-# 18 "C:/ncs/v2.2.0/zephyr/include/zephyr/sys/util_internal.h" 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/sys/util_loops.h" 1 3 4
-# 19 "C:/ncs/v2.2.0/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
-# 35 "C:/ncs/v2.2.0/zephyr/include/zephyr/sys/util_macro.h" 2 3 4
-# 20 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/dt-util.h" 2 3 4
-# 11 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h" 2 3 4
-# 9 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/gpio/gpio.h" 1 3 4
-# 10 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/i2c/i2c.h" 1 3 4
-# 11 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/pinctrl/nrf-pinctrl.h" 1 3 4
-# 12 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/include/zephyr/dt-bindings/pwm/pwm.h" 1 3 4
-# 13 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/adc/adc.h" 1 3 4
+# 8 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h" 1 3 4
+# 10 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h" 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/dt-util.h" 1 3 4
+# 19 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/dt-util.h" 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/sys/util_macro.h" 1 3 4
+# 34 "C:/ncs/v2.1.2/zephyr/include/zephyr/sys/util_macro.h" 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/sys/util_internal.h" 1 3 4
+# 18 "C:/ncs/v2.1.2/zephyr/include/zephyr/sys/util_internal.h" 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/sys/util_loops.h" 1 3 4
+# 19 "C:/ncs/v2.1.2/zephyr/include/zephyr/sys/util_internal.h" 2 3 4
+# 35 "C:/ncs/v2.1.2/zephyr/include/zephyr/sys/util_macro.h" 2 3 4
+# 20 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/dt-util.h" 2 3 4
+# 11 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/adc/nrf-adc.h" 2 3 4
+# 9 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/gpio/gpio.h" 1 3 4
+# 10 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/i2c/i2c.h" 1 3 4
+# 11 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/pinctrl/nrf-pinctrl.h" 1 3 4
+# 12 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/include/zephyr/dt-bindings/pwm/pwm.h" 1 3 4
+# 13 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
 
-# 1 "C:/ncs/v2.2.0/zephyr/dts/common/freq.h" 1 3 4
-# 15 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
-# 1 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/override.dtsi" 1 3 4
-# 16 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
-# 24 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf_common.dtsi" 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/dts/common/freq.h" 1 3 4
+# 15 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 1 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/override.dtsi" 1 3 4
+# 16 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 2 3 4
+# 24 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf_common.dtsi" 3 4
 / {
  pinctrl: pin-controller {
 
@@ -120,7 +120,7 @@
 
  status = "disabled";
 };
-# 9 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf5340_cpunet.dtsi" 2 3 4
+# 9 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf5340_cpunet.dtsi" 2 3 4
 
 / {
  chosen {
@@ -191,11 +191,6 @@
    ieee802154-supported;
    ble-2mbps-supported;
    ble-coded-phy-supported;
-
-   ieee802154: ieee802154 {
-    compatible = "nordic,nrf-ieee802154";
-    status = "disabled";
-   };
   };
 
   rng: random@41009000 {
@@ -438,7 +433,7 @@
 &nvic {
  arm,num-irq-priority-bits = <3>;
 };
-# 9 "C:/ncs/v2.2.0/zephyr/dts/arm/nordic/nrf5340_cpunet_qkaa.dtsi" 2 3 4
+# 9 "C:/ncs/v2.1.2/zephyr/dts/arm/nordic/nrf5340_cpunet_qkaa.dtsi" 2 3 4
 
 &flash1 {
  reg = <0x01000000 ((256) * 1024)>;
@@ -461,8 +456,8 @@
   compatible = "nordic,nRF5340-CPUNET-QKAA", "nordic,nRF5340-CPUNET", "nordic,nRF53", "simple-bus";
  };
 };
-# 9 "C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet.dts" 2
-# 1 "C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet-pinctrl.dtsi" 1
+# 9 "C:/ncs/v2.1.2/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet.dts" 2
+# 1 "C:/ncs/v2.1.2/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet-pinctrl.dtsi" 1
 
 
 
@@ -471,60 +466,60 @@
 &pinctrl {
  uart0_default: uart0_default {
   group1 {
-   psels = <((((((1) * 32U) + (1)) & 0x7FU) << 0U) | ((0U & 0xFFFFU) << 16U))>,
-    <((((((0) * 32U) + (11)) & 0x7FU) << 0U) | ((2U & 0xFFFFU) << 16U))>;
+   psels = <((((((1) * 32U) + (1)) & 0x3FU) << 0U) | ((0U & 0xFFFFU) << 16U))>,
+    <((((((0) * 32U) + (11)) & 0x3FU) << 0U) | ((2U & 0xFFFFU) << 16U))>;
   };
   group2 {
-   psels = <((((((1) * 32U) + (0)) & 0x7FU) << 0U) | ((1U & 0xFFFFU) << 16U))>,
-    <((((((0) * 32U) + (10)) & 0x7FU) << 0U) | ((3U & 0xFFFFU) << 16U))>;
+   psels = <((((((1) * 32U) + (0)) & 0x3FU) << 0U) | ((1U & 0xFFFFU) << 16U))>,
+    <((((((0) * 32U) + (10)) & 0x3FU) << 0U) | ((3U & 0xFFFFU) << 16U))>;
    bias-pull-up;
   };
  };
 
  uart0_sleep: uart0_sleep {
   group1 {
-   psels = <((((((1) * 32U) + (1)) & 0x7FU) << 0U) | ((0U & 0xFFFFU) << 16U))>,
-    <((((((1) * 32U) + (0)) & 0x7FU) << 0U) | ((1U & 0xFFFFU) << 16U))>,
-    <((((((0) * 32U) + (11)) & 0x7FU) << 0U) | ((2U & 0xFFFFU) << 16U))>,
-    <((((((0) * 32U) + (10)) & 0x7FU) << 0U) | ((3U & 0xFFFFU) << 16U))>;
+   psels = <((((((1) * 32U) + (1)) & 0x3FU) << 0U) | ((0U & 0xFFFFU) << 16U))>,
+    <((((((1) * 32U) + (0)) & 0x3FU) << 0U) | ((1U & 0xFFFFU) << 16U))>,
+    <((((((0) * 32U) + (11)) & 0x3FU) << 0U) | ((2U & 0xFFFFU) << 16U))>,
+    <((((((0) * 32U) + (10)) & 0x3FU) << 0U) | ((3U & 0xFFFFU) << 16U))>;
    low-power-enable;
   };
  };
 
  i2c0_default: i2c0_default {
   group1 {
-   psels = <((((((1) * 32U) + (2)) & 0x7FU) << 0U) | ((12U & 0xFFFFU) << 16U))>,
-    <((((((1) * 32U) + (3)) & 0x7FU) << 0U) | ((11U & 0xFFFFU) << 16U))>;
+   psels = <((((((1) * 32U) + (2)) & 0x3FU) << 0U) | ((12U & 0xFFFFU) << 16U))>,
+    <((((((1) * 32U) + (3)) & 0x3FU) << 0U) | ((11U & 0xFFFFU) << 16U))>;
   };
  };
 
  i2c0_sleep: i2c0_sleep {
   group1 {
-   psels = <((((((1) * 32U) + (2)) & 0x7FU) << 0U) | ((12U & 0xFFFFU) << 16U))>,
-    <((((((1) * 32U) + (3)) & 0x7FU) << 0U) | ((11U & 0xFFFFU) << 16U))>;
+   psels = <((((((1) * 32U) + (2)) & 0x3FU) << 0U) | ((12U & 0xFFFFU) << 16U))>,
+    <((((((1) * 32U) + (3)) & 0x3FU) << 0U) | ((11U & 0xFFFFU) << 16U))>;
    low-power-enable;
   };
  };
 
  spi0_default: spi0_default {
   group1 {
-   psels = <((((((1) * 32U) + (15)) & 0x7FU) << 0U) | ((4U & 0xFFFFU) << 16U))>,
-    <((((((1) * 32U) + (14)) & 0x7FU) << 0U) | ((6U & 0xFFFFU) << 16U))>,
-    <((((((1) * 32U) + (13)) & 0x7FU) << 0U) | ((5U & 0xFFFFU) << 16U))>;
+   psels = <((((((1) * 32U) + (15)) & 0x3FU) << 0U) | ((4U & 0xFFFFU) << 16U))>,
+    <((((((1) * 32U) + (14)) & 0x3FU) << 0U) | ((6U & 0xFFFFU) << 16U))>,
+    <((((((1) * 32U) + (13)) & 0x3FU) << 0U) | ((5U & 0xFFFFU) << 16U))>;
   };
  };
 
  spi0_sleep: spi0_sleep {
   group1 {
-   psels = <((((((1) * 32U) + (15)) & 0x7FU) << 0U) | ((4U & 0xFFFFU) << 16U))>,
-    <((((((1) * 32U) + (14)) & 0x7FU) << 0U) | ((6U & 0xFFFFU) << 16U))>,
-    <((((((1) * 32U) + (13)) & 0x7FU) << 0U) | ((5U & 0xFFFFU) << 16U))>;
+   psels = <((((((1) * 32U) + (15)) & 0x3FU) << 0U) | ((4U & 0xFFFFU) << 16U))>,
+    <((((((1) * 32U) + (14)) & 0x3FU) << 0U) | ((6U & 0xFFFFU) << 16U))>,
+    <((((((1) * 32U) + (13)) & 0x3FU) << 0U) | ((5U & 0xFFFFU) << 16U))>;
    low-power-enable;
   };
  };
 
 };
-# 10 "C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet.dts" 2
+# 10 "C:/ncs/v2.1.2/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet.dts" 2
 
 / {
  model = "Nordic NRF5340 DK NRF5340 Network";
@@ -712,8 +707,8 @@ arduino_spi: &spi0 {
 };
 
 
-# 1 "C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340_shared_sram_planning_conf.dts" 1
-# 14 "C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340_shared_sram_planning_conf.dts"
+# 1 "C:/ncs/v2.1.2/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340_shared_sram_planning_conf.dts" 1
+# 14 "C:/ncs/v2.1.2/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340_shared_sram_planning_conf.dts"
 / {
  chosen {
 
@@ -731,6 +726,6 @@ arduino_spi: &spi0 {
   };
  };
 };
-# 198 "C:/ncs/v2.2.0/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet.dts" 2
-# 0 "<command-line>" 2
-# 1 "C:/ncs/v2.2.0/zephyr/misc/empty_file.c"
+# 198 "C:/ncs/v2.1.2/zephyr/boards/arm/nrf5340dk_nrf5340/nrf5340dk_nrf5340_cpunet.dts" 2
+# 1 "<command-line>" 2
+# 1 "C:/ncs/v2.1.2/zephyr/misc/empty_file.c"

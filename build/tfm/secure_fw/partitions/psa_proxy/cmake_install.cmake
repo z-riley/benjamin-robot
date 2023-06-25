@@ -1,4 +1,4 @@
-# Install script for directory: C:/ncs/v2.2.0/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/psa_proxy
+# Install script for directory: C:/ncs/v2.1.2/modules/tee/tf-m/trusted-firmware-m/secure_fw/partitions/psa_proxy
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/ncs/toolchains/v2.2.0/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/ncs/toolchains/v2.1.2/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-objdump.exe")
 endif()
 

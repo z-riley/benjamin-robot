@@ -29,7 +29,6 @@
 #define ___thread_stack_info_t_size_OFFSET 0x4
 #define ___thread_t_stack_info_OFFSET 0x68
 #define K_THREAD_SIZEOF 0x80
-#define __z_interrupt_stack_SIZEOF 0x800
 #define _DEVICE_STRUCT_SIZEOF 0x18
 #define _DEVICE_STRUCT_HANDLES_OFFSET 0x14
 #define _PM_DEVICE_STRUCT_FLAGS_OFFSET 0x0

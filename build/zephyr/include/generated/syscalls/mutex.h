@@ -34,7 +34,7 @@ static inline int z_sys_mutex_kernel_lock(struct sys_mutex * mutex, k_timeout_t 
 	return z_impl_z_sys_mutex_kernel_lock(mutex, timeout);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define z_sys_mutex_kernel_lock(mutex, timeout) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_Z_SYS_MUTEX_KERNEL_LOCK, z_sys_mutex_kernel_lock, mutex, timeout); 	retval = z_sys_mutex_kernel_lock(mutex, timeout); 	sys_port_trace_syscall_exit(K_SYSCALL_Z_SYS_MUTEX_KERNEL_LOCK, z_sys_mutex_kernel_lock, mutex, timeout, retval); 	retval; })
@@ -57,7 +57,7 @@ static inline int z_sys_mutex_kernel_unlock(struct sys_mutex * mutex)
 	return z_impl_z_sys_mutex_kernel_unlock(mutex);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define z_sys_mutex_kernel_unlock(mutex) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_Z_SYS_MUTEX_KERNEL_UNLOCK, z_sys_mutex_kernel_unlock, mutex); 	retval = z_sys_mutex_kernel_unlock(mutex); 	sys_port_trace_syscall_exit(K_SYSCALL_Z_SYS_MUTEX_KERNEL_UNLOCK, z_sys_mutex_kernel_unlock, mutex, retval); 	retval; })

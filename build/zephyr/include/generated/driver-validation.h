@@ -44,8 +44,6 @@
 
 #define Z_SYSCALL_DRIVER_I2S(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, i2s, I2S)
 
-#define Z_SYSCALL_DRIVER_I3C(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, i3c, I3C)
-
 #define Z_SYSCALL_DRIVER_IPM(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, ipm, IPM)
 
 #define Z_SYSCALL_DRIVER_KSCAN(ptr, op) Z_SYSCALL_DRIVER_GEN(ptr, op, kscan, KSCAN)

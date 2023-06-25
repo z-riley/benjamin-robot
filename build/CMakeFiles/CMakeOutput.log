@@ -1,7 +1,7 @@
-The target system is: Generic - 3.2.99 - arm
-The host system is: Windows - 10.0.19044 - AMD64
+The target system is: Generic - 3.1.99 - arm
+The host system is: Windows - 10.0.19045 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: C:/ncs/toolchains/v2.2.0/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe 
+Compiler: C:/ncs/toolchains/v2.1.2/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe 
 Build flags: 
 Id flags: -c 
 
@@ -14,7 +14,7 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 The C compiler identification is GNU, found in "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/3.20.5/CompilerIdC/CMakeCCompilerId.o"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: C:/ncs/toolchains/v2.2.0/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe 
+Compiler: C:/ncs/toolchains/v2.1.2/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe 
 Build flags: 
 Id flags: -c 
 
@@ -27,26 +27,934 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 The CXX compiler identification is GNU, found in "C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/3.20.5/CompilerIdCXX/CMakeCXXCompilerId.o"
 
 Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
-arm-zephyr-eabi-gcc.exe (Zephyr SDK 0.15.1) 12.1.0
-Copyright (C) 2022 Free Software Foundation, Inc.
+arm-zephyr-eabi-gcc.exe (Zephyr SDK 0.14.1) 10.3.0
+Copyright (C) 2020 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_5ae28 && [1/2] Building C object CMakeFiles/cmTC_5ae28.dir/src.c.obj
+[2/2] Linking C executable cmTC_5ae28
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0_ succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_7520d && [1/2] Building C object CMakeFiles/cmTC_7520d.dir/src.c.obj
+[2/2] Linking C executable cmTC_7520d
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wall_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_68799 && [1/2] Building C object CMakeFiles/cmTC_68799.dir/src.c.obj
+[2/2] Linking C executable cmTC_68799
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wformat_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_59993 && [1/2] Building C object CMakeFiles/cmTC_59993.dir/src.c.obj
+[2/2] Linking C executable cmTC_59993
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wformat_security_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_2b26d && [1/2] Building C object CMakeFiles/cmTC_2b26d.dir/src.c.obj
+cc1.exe: warning: '-Wformat-security' ignored without '-Wformat' [-Wformat-security]
+[2/2] Linking C executable cmTC_2b26d
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wformat_zero_length_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_bad00 && [1/2] Building C object CMakeFiles/cmTC_bad00.dir/src.c.obj
+cc1.exe: warning: '-Wformat-zero-length' ignored without '-Wformat' [-Wformat-zero-length]
+[2/2] Linking C executable cmTC_bad00
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wmain_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_f4bb2 && [1/2] Building C object CMakeFiles/cmTC_f4bb2.dir/src.c.obj
+[2/2] Linking C executable cmTC_f4bb2
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wpointer_sign_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_b4cd5 && [1/2] Building C object CMakeFiles/cmTC_b4cd5.dir/src.c.obj
+[2/2] Linking C executable cmTC_b4cd5
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wpointer_arith_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_583ad && [1/2] Building C object CMakeFiles/cmTC_583ad.dir/src.c.obj
+[2/2] Linking C executable cmTC_583ad
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wexpansion_to_defined_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_cc17f && [1/2] Building C object CMakeFiles/cmTC_cc17f.dir/src.c.obj
+[2/2] Linking C executable cmTC_cc17f
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wlogical_op_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_1b5b6 && [1/2] Building C object CMakeFiles/cmTC_1b5b6.dir/src.c.obj
+[2/2] Linking C executable cmTC_1b5b6
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wmissing_field_initializers_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_dad11 && [1/2] Building C object CMakeFiles/cmTC_dad11.dir/src.c.obj
+[2/2] Linking C executable cmTC_dad11
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wpacked_bitfield_compat_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_f5fde && [1/2] Building C object CMakeFiles/cmTC_f5fde.dir/src.c.obj
+[2/2] Linking C executable cmTC_f5fde
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wvla_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_a94fc && [1/2] Building C object CMakeFiles/cmTC_a94fc.dir/src.c.obj
+[2/2] Linking C executable cmTC_a94fc
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wunused_but_set_variable_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_4dd55 && [1/2] Building C object CMakeFiles/cmTC_4dd55.dir/src.c.obj
+[2/2] Linking C executable cmTC_4dd55
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Werror_implicit_int_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_53b52 && [1/2] Building C object CMakeFiles/cmTC_53b52.dir/src.c.obj
+[2/2] Linking C executable cmTC_53b52
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_freestanding_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_87917 && [1/2] Building C object CMakeFiles/cmTC_87917.dir/src.c.obj
+[2/2] Linking C executable cmTC_87917
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_ffreestanding_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_1678b && [1/2] Building C object CMakeFiles/cmTC_1678b.dir/src.c.obj
+[2/2] Linking C executable cmTC_1678b
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_gdwarf_4_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_50247 && [1/2] Building C object CMakeFiles/cmTC_50247.dir/src.c.obj
+[2/2] Linking C executable cmTC_50247
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___print_memory_usage succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_d1a95 && [1/2] Building C object CMakeFiles/cmTC_d1a95.dir/src.c.obj
+[2/2] Linking C executable cmTC_d1a95
+Memory region         Used Size  Region Size  %age Used
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fsanitize_address succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_e849c && [1/2] Building C object CMakeFiles/cmTC_e849c.dir/src.c.obj
+[2/2] Linking C executable cmTC_e849c
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fsanitize_undefined succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_2e85e && [1/2] Building C object CMakeFiles/cmTC_2e85e.dir/src.c.obj
+[2/2] Linking C executable cmTC_2e85e
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__pg succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_9fe90 && [1/2] Building C object CMakeFiles/cmTC_9fe90.dir/src.c.obj
+[2/2] Linking C executable cmTC_9fe90
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__no_pie succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_84339 && [1/2] Building C object CMakeFiles/cmTC_84339.dir/src.c.obj
+[2/2] Linking C executable cmTC_84339
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__mcpu_cortex_m33 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_be71f && [1/2] Building C object CMakeFiles/cmTC_be71f.dir/src.c.obj
+[2/2] Linking C executable cmTC_be71f
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__mthumb succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_79aca && [1/2] Building C object CMakeFiles/cmTC_79aca.dir/src.c.obj
+[2/2] Linking C executable cmTC_79aca
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__mabi_aapcs succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_70edb && [1/2] Building C object CMakeFiles/cmTC_70edb.dir/src.c.obj
+[2/2] Linking C executable cmTC_70edb
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__mfp16_format_ieee succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_cb117 && [1/2] Building C object CMakeFiles/cmTC_cb117.dir/src.c.obj
+[2/2] Linking C executable cmTC_cb117
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___gc_sections succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_d3e36 && [1/2] Building C object CMakeFiles/cmTC_d3e36.dir/src.c.obj
+[2/2] Linking C executable cmTC_d3e36
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___build_id_none succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_cbcf8 && [1/2] Building C object CMakeFiles/cmTC_cbcf8.dir/src.c.obj
+[2/2] Linking C executable cmTC_cbcf8
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___sort_common_descending succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_8cb03 && [1/2] Building C object CMakeFiles/cmTC_8cb03.dir/src.c.obj
+[2/2] Linking C executable cmTC_8cb03
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___sort_section_alignment succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_4974f && [1/2] Building C object CMakeFiles/cmTC_4974f.dir/src.c.obj
+[2/2] Linking C executable cmTC_4974f
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__nostdlib succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_57990 && [1/2] Building C object CMakeFiles/cmTC_57990.dir/src.c.obj
+[2/2] Linking C executable cmTC_57990
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__static succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_51714 && [1/2] Building C object CMakeFiles/cmTC_51714.dir/src.c.obj
+[2/2] Linking C executable cmTC_51714
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl__X succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_01b63 && [1/2] Building C object CMakeFiles/cmTC_01b63.dir/src.c.obj
+[2/2] Linking C executable cmTC_01b63
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl__N succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_3d4c6 && [1/2] Building C object CMakeFiles/cmTC_3d4c6.dir/src.c.obj
+[2/2] Linking C executable cmTC_3d4c6
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___orphan_handling_warn succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_461d1 && [1/2] Building C object CMakeFiles/cmTC_461d1.dir/src.c.obj
+[2/2] Linking C executable cmTC_461d1
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_asynchronous_unwind_tables_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_7ea28 && [1/2] Building C object CMakeFiles/cmTC_7ea28.dir/src.c.obj
+[2/2] Linking C executable cmTC_7ea28
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_pie_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_4ddc1 && [1/2] Building C object CMakeFiles/cmTC_4ddc1.dir/src.c.obj
+[2/2] Linking C executable cmTC_4ddc1
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_pic_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_a1fd1 && [1/2] Building C object CMakeFiles/cmTC_a1fd1.dir/src.c.obj
+[2/2] Linking C executable cmTC_a1fd1
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_reorder_functions_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_db84f && [1/2] Building C object CMakeFiles/cmTC_db84f.dir/src.c.obj
+[2/2] Linking C executable cmTC_db84f
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_defer_pop_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_b3c32 && [1/2] Building C object CMakeFiles/cmTC_b3c32.dir/src.c.obj
+[2/2] Linking C executable cmTC_b3c32
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map_C__Users_zac46_Documents_Nordic_benjamin_robot_CMAKE_SOURCE_DIR_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_1ac1d && [1/2] Building C object CMakeFiles/cmTC_1ac1d.dir/src.c.obj
+[2/2] Linking C executable cmTC_1ac1d
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map_C__ncs_v2_1_2_zephyr_ZEPHYR_BASE_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_24ce9 && [1/2] Building C object CMakeFiles/cmTC_24ce9.dir/src.c.obj
+[2/2] Linking C executable cmTC_24ce9
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map_C__ncs_v2_1_2_WEST_TOPDIR_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_6a6a9 && [1/2] Building C object CMakeFiles/cmTC_6a6a9.dir/src.c.obj
+[2/2] Linking C executable cmTC_6a6a9
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_ffunction_sections_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_32bd8 && [1/2] Building C object CMakeFiles/cmTC_32bd8.dir/src.c.obj
+[2/2] Linking C executable cmTC_32bd8
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fdata_sections_C__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_f2d8c && [1/2] Building C object CMakeFiles/cmTC_f2d8c.dir/src.c.obj
+[2/2] Linking C executable cmTC_f2d8c
+
+
+Source file was:
+int main(void) { return 0; }
 Determining if files stdatomic.h exist passed with the following output:
 Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/ncs/toolchains/v2.2.0/opt/bin/ninja.exe cmTC_64164 && [1/2] Building C object CMakeFiles/cmTC_64164.dir/HAVE_STDATOMIC_H.c.obj
-[2/2] Linking C executable cmTC_64164
-arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_64164.dir/HAVE_STDATOMIC_H.c.obj: linker input file unused because linking not done
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_5b27e && [1/2] Building C object CMakeFiles/cmTC_5b27e.dir/HAVE_STDATOMIC_H.c.obj
+[2/2] Linking C executable cmTC_5b27e
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_5b27e.dir/HAVE_STDATOMIC_H.c.obj: linker input file unused because linking not done
 
 
 
 Determining if files fcntl.h exist passed with the following output:
 Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/ncs/toolchains/v2.2.0/opt/bin/ninja.exe cmTC_a887b && [1/2] Building C object CMakeFiles/cmTC_a887b.dir/HAVE_FCNTL_H.c.obj
-[2/2] Linking C executable cmTC_a887b
-arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_a887b.dir/HAVE_FCNTL_H.c.obj: linker input file unused because linking not done
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_3a747 && [1/2] Building C object CMakeFiles/cmTC_3a747.dir/HAVE_FCNTL_H.c.obj
+[2/2] Linking C executable cmTC_3a747
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_3a747.dir/HAVE_FCNTL_H.c.obj: linker input file unused because linking not done
 
 
 
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_6a7c8 && [1/2] Building C object CMakeFiles/cmTC_6a7c8.dir/src.c.obj
+[2/2] Linking C executable cmTC_6a7c8
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_6a7c8.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0_ succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_2031c && [1/2] Building C object CMakeFiles/cmTC_2031c.dir/src.c.obj
+[2/2] Linking C executable cmTC_2031c
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_2031c.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wall_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_83f69 && [1/2] Building C object CMakeFiles/cmTC_83f69.dir/src.c.obj
+[2/2] Linking C executable cmTC_83f69
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_83f69.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wformat_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_1eb9c && [1/2] Building C object CMakeFiles/cmTC_1eb9c.dir/src.c.obj
+[2/2] Linking C executable cmTC_1eb9c
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_1eb9c.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wformat_security_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_1825a && [1/2] Building C object CMakeFiles/cmTC_1825a.dir/src.c.obj
+cc1.exe: warning: '-Wformat-security' ignored without '-Wformat' [-Wformat-security]
+[2/2] Linking C executable cmTC_1825a
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_1825a.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wformat_zero_length_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_8a676 && [1/2] Building C object CMakeFiles/cmTC_8a676.dir/src.c.obj
+cc1.exe: warning: '-Wformat-zero-length' ignored without '-Wformat' [-Wformat-zero-length]
+[2/2] Linking C executable cmTC_8a676
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_8a676.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wmain_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_0cf63 && [1/2] Building C object CMakeFiles/cmTC_0cf63.dir/src.c.obj
+[2/2] Linking C executable cmTC_0cf63
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_0cf63.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wpointer_sign_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_8415b && [1/2] Building C object CMakeFiles/cmTC_8415b.dir/src.c.obj
+[2/2] Linking C executable cmTC_8415b
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_8415b.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wpointer_arith_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_1b61d && [1/2] Building C object CMakeFiles/cmTC_1b61d.dir/src.c.obj
+[2/2] Linking C executable cmTC_1b61d
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_1b61d.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wexpansion_to_defined_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_9f355 && [1/2] Building C object CMakeFiles/cmTC_9f355.dir/src.c.obj
+[2/2] Linking C executable cmTC_9f355
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_9f355.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wlogical_op_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_fd9b0 && [1/2] Building C object CMakeFiles/cmTC_fd9b0.dir/src.c.obj
+[2/2] Linking C executable cmTC_fd9b0
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_fd9b0.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wmissing_field_initializers_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_0e39f && [1/2] Building C object CMakeFiles/cmTC_0e39f.dir/src.c.obj
+[2/2] Linking C executable cmTC_0e39f
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_0e39f.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wpacked_bitfield_compat_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_b31cc && [1/2] Building C object CMakeFiles/cmTC_b31cc.dir/src.c.obj
+[2/2] Linking C executable cmTC_b31cc
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_b31cc.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wvla_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_e18f3 && [1/2] Building C object CMakeFiles/cmTC_e18f3.dir/src.c.obj
+[2/2] Linking C executable cmTC_e18f3
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_e18f3.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Wunused_but_set_variable_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_82c38 && [1/2] Building C object CMakeFiles/cmTC_82c38.dir/src.c.obj
+[2/2] Linking C executable cmTC_82c38
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_82c38.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_Werror_implicit_int_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_986a6 && [1/2] Building C object CMakeFiles/cmTC_986a6.dir/src.c.obj
+[2/2] Linking C executable cmTC_986a6
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_986a6.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_freestanding_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_096d9 && [1/2] Building C object CMakeFiles/cmTC_096d9.dir/src.c.obj
+[2/2] Linking C executable cmTC_096d9
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_096d9.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_ffreestanding_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_b6f0c && [1/2] Building C object CMakeFiles/cmTC_b6f0c.dir/src.c.obj
+[2/2] Linking C executable cmTC_b6f0c
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_b6f0c.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_gdwarf_4_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_a9d01 && [1/2] Building C object CMakeFiles/cmTC_a9d01.dir/src.c.obj
+[2/2] Linking C executable cmTC_a9d01
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_a9d01.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___print_memory_usage succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_25833 && [1/2] Building C object CMakeFiles/cmTC_25833.dir/src.c.obj
+[2/2] Linking C executable cmTC_25833
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_25833.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__lasan succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_8ac2c && [1/2] Building C object CMakeFiles/cmTC_8ac2c.dir/src.c.obj
+[2/2] Linking C executable cmTC_8ac2c
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_8ac2c.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fsanitize_address succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_e3521 && [1/2] Building C object CMakeFiles/cmTC_e3521.dir/src.c.obj
+[2/2] Linking C executable cmTC_e3521
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_e3521.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__fsanitize_undefined succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_77873 && [1/2] Building C object CMakeFiles/cmTC_77873.dir/src.c.obj
+[2/2] Linking C executable cmTC_77873
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_77873.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__pg succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_09158 && [1/2] Building C object CMakeFiles/cmTC_09158.dir/src.c.obj
+[2/2] Linking C executable cmTC_09158
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_09158.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__no_pie succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_839d4 && [1/2] Building C object CMakeFiles/cmTC_839d4.dir/src.c.obj
+[2/2] Linking C executable cmTC_839d4
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_839d4.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__mcpu_cortex_m33 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_f4542 && [1/2] Building C object CMakeFiles/cmTC_f4542.dir/src.c.obj
+[2/2] Linking C executable cmTC_f4542
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_f4542.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__mthumb succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_a9256 && [1/2] Building C object CMakeFiles/cmTC_a9256.dir/src.c.obj
+[2/2] Linking C executable cmTC_a9256
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_a9256.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__mabi_aapcs succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_a4774 && [1/2] Building C object CMakeFiles/cmTC_a4774.dir/src.c.obj
+[2/2] Linking C executable cmTC_a4774
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_a4774.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__mfp16_format_ieee succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_a3ecf && [1/2] Building C object CMakeFiles/cmTC_a3ecf.dir/src.c.obj
+[2/2] Linking C executable cmTC_a3ecf
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_a3ecf.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___gc_sections succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_d41dc && [1/2] Building C object CMakeFiles/cmTC_d41dc.dir/src.c.obj
+[2/2] Linking C executable cmTC_d41dc
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_d41dc.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___build_id_none succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_73b31 && [1/2] Building C object CMakeFiles/cmTC_73b31.dir/src.c.obj
+[2/2] Linking C executable cmTC_73b31
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_73b31.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___sort_common_descending succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_32da2 && [1/2] Building C object CMakeFiles/cmTC_32da2.dir/src.c.obj
+[2/2] Linking C executable cmTC_32da2
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_32da2.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___sort_section_alignment succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_3de1a && [1/2] Building C object CMakeFiles/cmTC_3de1a.dir/src.c.obj
+[2/2] Linking C executable cmTC_3de1a
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_3de1a.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__nostdlib succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_a7994 && [1/2] Building C object CMakeFiles/cmTC_a7994.dir/src.c.obj
+[2/2] Linking C executable cmTC_a7994
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_a7994.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__static succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_e3fe8 && [1/2] Building C object CMakeFiles/cmTC_e3fe8.dir/src.c.obj
+[2/2] Linking C executable cmTC_e3fe8
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_e3fe8.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl__X succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_d94da && [1/2] Building C object CMakeFiles/cmTC_d94da.dir/src.c.obj
+[2/2] Linking C executable cmTC_d94da
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_d94da.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl__N succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_1c20f && [1/2] Building C object CMakeFiles/cmTC_1c20f.dir/src.c.obj
+[2/2] Linking C executable cmTC_1c20f
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_1c20f.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0__Wl___orphan_handling_warn succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_183c5 && [1/2] Building C object CMakeFiles/cmTC_183c5.dir/src.c.obj
+[2/2] Linking C executable cmTC_183c5
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_183c5.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_asynchronous_unwind_tables_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_52204 && [1/2] Building C object CMakeFiles/cmTC_52204.dir/src.c.obj
+[2/2] Linking C executable cmTC_52204
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_52204.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_pie_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_37db1 && [1/2] Building C object CMakeFiles/cmTC_37db1.dir/src.c.obj
+[2/2] Linking C executable cmTC_37db1
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_37db1.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_pic_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_c4adc && [1/2] Building C object CMakeFiles/cmTC_c4adc.dir/src.c.obj
+[2/2] Linking C executable cmTC_c4adc
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_c4adc.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_reorder_functions_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_85544 && [1/2] Building C object CMakeFiles/cmTC_85544.dir/src.c.obj
+[2/2] Linking C executable cmTC_85544
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_85544.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fno_defer_pop_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_b7728 && [1/2] Building C object CMakeFiles/cmTC_b7728.dir/src.c.obj
+[2/2] Linking C executable cmTC_b7728
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_b7728.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map_C__Users_zac46_Documents_Nordic_benjamin_robot_CMAKE_SOURCE_DIR_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_b4c72 && [1/2] Building C object CMakeFiles/cmTC_b4c72.dir/src.c.obj
+[2/2] Linking C executable cmTC_b4c72
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_b4c72.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map_C__ncs_v2_1_2_zephyr_ZEPHYR_BASE_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_9584e && [1/2] Building C object CMakeFiles/cmTC_9584e.dir/src.c.obj
+[2/2] Linking C executable cmTC_9584e
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_9584e.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fmacro_prefix_map_C__ncs_v2_1_2_WEST_TOPDIR_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_a541d && [1/2] Building C object CMakeFiles/cmTC_a541d.dir/src.c.obj
+[2/2] Linking C executable cmTC_a541d
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_a541d.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_ffunction_sections_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_43533 && [1/2] Building C object CMakeFiles/cmTC_43533.dir/src.c.obj
+[2/2] Linking C executable cmTC_43533
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_43533.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test check_fdata_sections_C__c__nostartfiles__nostdlib__isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include___isystem__c__ncs_toolchains_v2_1_2_opt_zephyr_sdk_arm_zephyr_eabi_bin____lib_gcc_arm_zephyr_eabi_10_3_0_include_fixed___Wl___unresolved_symbols_ignore_in_object_files__Wl___entry_0 succeeded with the following output:
+Change Dir: C:/Users/zac46/Documents/Nordic/benjamin-robot/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/ncs/toolchains/v2.1.2/opt/bin/ninja.exe cmTC_93aa9 && [1/2] Building C object CMakeFiles/cmTC_93aa9.dir/src.c.obj
+[2/2] Linking C executable cmTC_93aa9
+arm-zephyr-eabi-gcc.exe: warning: CMakeFiles/cmTC_93aa9.dir/src.c.obj: linker input file unused because linking not done
+
+
+Source file was:
+int main(void) { return 0; }

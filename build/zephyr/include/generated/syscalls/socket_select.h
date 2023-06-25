@@ -37,7 +37,7 @@ static inline int zsock_select(int nfds, zsock_fd_set * readfds, zsock_fd_set * 
 	return z_impl_zsock_select(nfds, readfds, writefds, exceptfds, timeout);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define zsock_select(nfds, readfds, writefds, exceptfds, timeout) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_ZSOCK_SELECT, zsock_select, nfds, readfds, writefds, exceptfds, timeout); 	retval = zsock_select(nfds, readfds, writefds, exceptfds, timeout); 	sys_port_trace_syscall_exit(K_SYSCALL_ZSOCK_SELECT, zsock_select, nfds, readfds, writefds, exceptfds, timeout, retval); 	retval; })

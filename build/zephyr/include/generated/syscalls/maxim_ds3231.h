@@ -34,7 +34,7 @@ static inline int maxim_ds3231_req_syncpoint(const struct device * dev, struct k
 	return z_impl_maxim_ds3231_req_syncpoint(dev, signal);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define maxim_ds3231_req_syncpoint(dev, signal) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MAXIM_DS3231_REQ_SYNCPOINT, maxim_ds3231_req_syncpoint, dev, signal); 	retval = maxim_ds3231_req_syncpoint(dev, signal); 	sys_port_trace_syscall_exit(K_SYSCALL_MAXIM_DS3231_REQ_SYNCPOINT, maxim_ds3231_req_syncpoint, dev, signal, retval); 	retval; })
@@ -58,7 +58,7 @@ static inline int maxim_ds3231_get_syncpoint(const struct device * dev, struct m
 	return z_impl_maxim_ds3231_get_syncpoint(dev, syncpoint);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define maxim_ds3231_get_syncpoint(dev, syncpoint) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_MAXIM_DS3231_GET_SYNCPOINT, maxim_ds3231_get_syncpoint, dev, syncpoint); 	retval = maxim_ds3231_get_syncpoint(dev, syncpoint); 	sys_port_trace_syscall_exit(K_SYSCALL_MAXIM_DS3231_GET_SYNCPOINT, maxim_ds3231_get_syncpoint, dev, syncpoint, retval); 	retval; })

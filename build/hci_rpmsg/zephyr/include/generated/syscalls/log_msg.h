@@ -37,7 +37,7 @@ static inline void z_log_msg_static_create(const void * source, const struct log
 	z_impl_z_log_msg_static_create(source, desc, package, data);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define z_log_msg_static_create(source, desc, package, data) do { 	sys_port_trace_syscall_enter(K_SYSCALL_Z_LOG_MSG_STATIC_CREATE, z_log_msg_static_create, source, desc, package, data); 	z_log_msg_static_create(source, desc, package, data); 	sys_port_trace_syscall_exit(K_SYSCALL_Z_LOG_MSG_STATIC_CREATE, z_log_msg_static_create, source, desc, package, data); } while(false)
@@ -75,7 +75,7 @@ static inline void z_log_msg_runtime_vcreate(uint8_t domain_id, const void * sou
 	z_impl_z_log_msg_runtime_vcreate(domain_id, source, level, data, dlen, package_flags, fmt, ap);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define z_log_msg_runtime_vcreate(domain_id, source, level, data, dlen, package_flags, fmt, ap) do { 	sys_port_trace_syscall_enter(K_SYSCALL_Z_LOG_MSG_RUNTIME_VCREATE, z_log_msg_runtime_vcreate, domain_id, source, level, data, dlen, package_flags, fmt, ap); 	z_log_msg_runtime_vcreate(domain_id, source, level, data, dlen, package_flags, fmt, ap); 	sys_port_trace_syscall_exit(K_SYSCALL_Z_LOG_MSG_RUNTIME_VCREATE, z_log_msg_runtime_vcreate, domain_id, source, level, data, dlen, package_flags, fmt, ap); } while(false)

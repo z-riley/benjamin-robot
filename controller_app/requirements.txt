@@ -1,0 +1,2 @@
+simplepyble=0.6.1
+pyqt6=6.5.1

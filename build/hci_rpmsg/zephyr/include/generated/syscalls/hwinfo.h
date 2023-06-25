@@ -34,7 +34,7 @@ static inline ssize_t hwinfo_get_device_id(uint8_t * buffer, size_t length)
 	return z_impl_hwinfo_get_device_id(buffer, length);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define hwinfo_get_device_id(buffer, length) ({ 	ssize_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_HWINFO_GET_DEVICE_ID, hwinfo_get_device_id, buffer, length); 	retval = hwinfo_get_device_id(buffer, length); 	sys_port_trace_syscall_exit(K_SYSCALL_HWINFO_GET_DEVICE_ID, hwinfo_get_device_id, buffer, length, retval); 	retval; })
@@ -57,7 +57,7 @@ static inline int hwinfo_get_reset_cause(uint32_t * cause)
 	return z_impl_hwinfo_get_reset_cause(cause);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define hwinfo_get_reset_cause(cause) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_HWINFO_GET_RESET_CAUSE, hwinfo_get_reset_cause, cause); 	retval = hwinfo_get_reset_cause(cause); 	sys_port_trace_syscall_exit(K_SYSCALL_HWINFO_GET_RESET_CAUSE, hwinfo_get_reset_cause, cause, retval); 	retval; })
@@ -79,7 +79,7 @@ static inline int hwinfo_clear_reset_cause(void)
 	return z_impl_hwinfo_clear_reset_cause();
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define hwinfo_clear_reset_cause() ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_HWINFO_CLEAR_RESET_CAUSE, hwinfo_clear_reset_cause); 	retval = hwinfo_clear_reset_cause(); 	sys_port_trace_syscall_exit(K_SYSCALL_HWINFO_CLEAR_RESET_CAUSE, hwinfo_clear_reset_cause, retval); 	retval; })
@@ -102,7 +102,7 @@ static inline int hwinfo_get_supported_reset_cause(uint32_t * supported)
 	return z_impl_hwinfo_get_supported_reset_cause(supported);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define hwinfo_get_supported_reset_cause(supported) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_HWINFO_GET_SUPPORTED_RESET_CAUSE, hwinfo_get_supported_reset_cause, supported); 	retval = hwinfo_get_supported_reset_cause(supported); 	sys_port_trace_syscall_exit(K_SYSCALL_HWINFO_GET_SUPPORTED_RESET_CAUSE, hwinfo_get_supported_reset_cause, supported, retval); 	retval; })

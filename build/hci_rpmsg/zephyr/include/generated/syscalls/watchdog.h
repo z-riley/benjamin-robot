@@ -34,7 +34,7 @@ static inline int wdt_setup(const struct device * dev, uint8_t options)
 	return z_impl_wdt_setup(dev, options);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define wdt_setup(dev, options) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_WDT_SETUP, wdt_setup, dev, options); 	retval = wdt_setup(dev, options); 	sys_port_trace_syscall_exit(K_SYSCALL_WDT_SETUP, wdt_setup, dev, options, retval); 	retval; })
@@ -57,7 +57,7 @@ static inline int wdt_disable(const struct device * dev)
 	return z_impl_wdt_disable(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define wdt_disable(dev) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_WDT_DISABLE, wdt_disable, dev); 	retval = wdt_disable(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_WDT_DISABLE, wdt_disable, dev, retval); 	retval; })
@@ -81,7 +81,7 @@ static inline int wdt_feed(const struct device * dev, int channel_id)
 	return z_impl_wdt_feed(dev, channel_id);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define wdt_feed(dev, channel_id) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_WDT_FEED, wdt_feed, dev, channel_id); 	retval = wdt_feed(dev, channel_id); 	sys_port_trace_syscall_exit(K_SYSCALL_WDT_FEED, wdt_feed, dev, channel_id, retval); 	retval; })

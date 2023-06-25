@@ -36,7 +36,7 @@ static inline int flash_read(const struct device * dev, off_t offset, void * dat
 	return z_impl_flash_read(dev, offset, data, len);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_read(dev, offset, data, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_READ, flash_read, dev, offset, data, len); 	retval = flash_read(dev, offset, data, len); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_READ, flash_read, dev, offset, data, len, retval); 	retval; })
@@ -62,7 +62,7 @@ static inline int flash_write(const struct device * dev, off_t offset, const voi
 	return z_impl_flash_write(dev, offset, data, len);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_write(dev, offset, data, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_WRITE, flash_write, dev, offset, data, len); 	retval = flash_write(dev, offset, data, len); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_WRITE, flash_write, dev, offset, data, len, retval); 	retval; })
@@ -87,7 +87,7 @@ static inline int flash_erase(const struct device * dev, off_t offset, size_t si
 	return z_impl_flash_erase(dev, offset, size);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_erase(dev, offset, size) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_ERASE, flash_erase, dev, offset, size); 	retval = flash_erase(dev, offset, size); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_ERASE, flash_erase, dev, offset, size, retval); 	retval; })
@@ -112,7 +112,7 @@ static inline int flash_get_page_info_by_offs(const struct device * dev, off_t o
 	return z_impl_flash_get_page_info_by_offs(dev, offset, info);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_get_page_info_by_offs(dev, offset, info) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_GET_PAGE_INFO_BY_OFFS, flash_get_page_info_by_offs, dev, offset, info); 	retval = flash_get_page_info_by_offs(dev, offset, info); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_GET_PAGE_INFO_BY_OFFS, flash_get_page_info_by_offs, dev, offset, info, retval); 	retval; })
@@ -137,7 +137,7 @@ static inline int flash_get_page_info_by_idx(const struct device * dev, uint32_t
 	return z_impl_flash_get_page_info_by_idx(dev, page_index, info);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_get_page_info_by_idx(dev, page_index, info) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_GET_PAGE_INFO_BY_IDX, flash_get_page_info_by_idx, dev, page_index, info); 	retval = flash_get_page_info_by_idx(dev, page_index, info); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_GET_PAGE_INFO_BY_IDX, flash_get_page_info_by_idx, dev, page_index, info, retval); 	retval; })
@@ -160,7 +160,7 @@ static inline size_t flash_get_page_count(const struct device * dev)
 	return z_impl_flash_get_page_count(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_get_page_count(dev) ({ 	size_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_GET_PAGE_COUNT, flash_get_page_count, dev); 	retval = flash_get_page_count(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_GET_PAGE_COUNT, flash_get_page_count, dev, retval); 	retval; })
@@ -186,7 +186,7 @@ static inline int flash_sfdp_read(const struct device * dev, off_t offset, void 
 	return z_impl_flash_sfdp_read(dev, offset, data, len);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_sfdp_read(dev, offset, data, len) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_SFDP_READ, flash_sfdp_read, dev, offset, data, len); 	retval = flash_sfdp_read(dev, offset, data, len); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_SFDP_READ, flash_sfdp_read, dev, offset, data, len, retval); 	retval; })
@@ -210,7 +210,7 @@ static inline int flash_read_jedec_id(const struct device * dev, uint8_t * id)
 	return z_impl_flash_read_jedec_id(dev, id);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_read_jedec_id(dev, id) ({ 	int retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_READ_JEDEC_ID, flash_read_jedec_id, dev, id); 	retval = flash_read_jedec_id(dev, id); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_READ_JEDEC_ID, flash_read_jedec_id, dev, id, retval); 	retval; })
@@ -233,7 +233,7 @@ static inline size_t flash_get_write_block_size(const struct device * dev)
 	return z_impl_flash_get_write_block_size(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_get_write_block_size(dev) ({ 	size_t retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_GET_WRITE_BLOCK_SIZE, flash_get_write_block_size, dev); 	retval = flash_get_write_block_size(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_GET_WRITE_BLOCK_SIZE, flash_get_write_block_size, dev, retval); 	retval; })
@@ -256,7 +256,7 @@ static inline const struct flash_parameters * flash_get_parameters(const struct 
 	return z_impl_flash_get_parameters(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define flash_get_parameters(dev) ({ 	const struct flash_parameters * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_FLASH_GET_PARAMETERS, flash_get_parameters, dev); 	retval = flash_get_parameters(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_FLASH_GET_PARAMETERS, flash_get_parameters, dev, retval); 	retval; })

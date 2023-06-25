@@ -33,7 +33,7 @@ static inline const struct device * device_get_binding(const char * name)
 	return z_impl_device_get_binding(name);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define device_get_binding(name) ({ 	const struct device * retval; 	sys_port_trace_syscall_enter(K_SYSCALL_DEVICE_GET_BINDING, device_get_binding, name); 	retval = device_get_binding(name); 	sys_port_trace_syscall_exit(K_SYSCALL_DEVICE_GET_BINDING, device_get_binding, name, retval); 	retval; })
@@ -56,7 +56,7 @@ static inline bool device_is_ready(const struct device * dev)
 	return z_impl_device_is_ready(dev);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define device_is_ready(dev) ({ 	bool retval; 	sys_port_trace_syscall_enter(K_SYSCALL_DEVICE_IS_READY, device_is_ready, dev); 	retval = device_is_ready(dev); 	sys_port_trace_syscall_exit(K_SYSCALL_DEVICE_IS_READY, device_is_ready, dev, retval); 	retval; })

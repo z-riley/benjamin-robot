@@ -35,7 +35,7 @@ static inline void nrf_qspi_nor_base_clock_div_force(const struct device * dev, 
 	z_impl_nrf_qspi_nor_base_clock_div_force(dev, force);
 }
 
-#if defined(CONFIG_TRACING_SYSCALL)
+#if (CONFIG_TRACING_SYSCALL == 1)
 #ifndef DISABLE_SYSCALL_TRACING
 
 #define nrf_qspi_nor_base_clock_div_force(dev, force) do { 	sys_port_trace_syscall_enter(K_SYSCALL_NRF_QSPI_NOR_BASE_CLOCK_DIV_FORCE, nrf_qspi_nor_base_clock_div_force, dev, force); 	nrf_qspi_nor_base_clock_div_force(dev, force); 	sys_port_trace_syscall_exit(K_SYSCALL_NRF_QSPI_NOR_BASE_CLOCK_DIV_FORCE, nrf_qspi_nor_base_clock_div_force, dev, force); } while(false)
