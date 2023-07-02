@@ -13,6 +13,7 @@ target_sources(app PRIVATE
     src/remote_service/remote.c
     src/libs/ultrasonic_hc-sr04.c
     src/helpers.c
+    src/radar_bx.c
 )
 
 zephyr_library_include_directories(src/remote_service)

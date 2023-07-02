@@ -1,4 +1,4 @@
-
+#include <stdint.h>
 #include "remote.h"
 
 #define LOG_MODULE_NAME remote
@@ -32,6 +32,15 @@ BT_GATT_SERVICE_DEFINE(remote_srv,
     NULL, on_write, NULL),
 );
 
+// Radar data service
+// BT_GATT_SERVICE_DEFINE(remote_srv,
+//     BT_GATT_PRIMARY_SERVICE(BT_UUID_DATA_SERVICE),
+//     BT_GATT_CHARACTERISTIC(BT_UUID_REMOTE_RADAR_CHRC,
+//     BT_GATT_CHRC_READ,
+//     BT_GATT_PERM_READ,
+//     NULL, on_read, NULL),
+// );
+
 /* Callbacks */
 void bt_ready(int err)
 {
@@ -56,6 +65,7 @@ static ssize_t on_write(struct bt_conn *conn,
     }
     return len;
 } /* on_write */
+
 
 int bluetooth_init(struct bt_conn_cb *bt_cb, struct bt_remote_service_cb *remote_cb)
 {

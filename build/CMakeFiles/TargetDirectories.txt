@@ -583,6 +583,12 @@ C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetoot
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetooth/CMakeFiles/rebuild_cache.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetooth/CMakeFiles/list_install_components.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetooth/CMakeFiles/install/strip.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetooth/services/CMakeFiles/install/local.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetooth/services/CMakeFiles/install.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetooth/services/CMakeFiles/edit_cache.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetooth/services/CMakeFiles/rebuild_cache.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetooth/services/CMakeFiles/list_install_components.dir
+C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/bluetooth/services/CMakeFiles/install/strip.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/net/CMakeFiles/install/local.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/net/CMakeFiles/install.dir
 C:/Users/zac46/Documents/Nordic/benjamin-robot/build/modules/nrf/subsys/net/CMakeFiles/edit_cache.dir

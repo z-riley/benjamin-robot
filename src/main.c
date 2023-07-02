@@ -9,6 +9,7 @@
 #include <zephyr/device.h>
 #include <zephyr/drivers/pwm.h>
 #include <zephyr/drivers/display.h>
+#include <bluetooth/services/nus.h>
 #include <lvgl.h>
 #include "remote_service/remote.h"
 #include "libs/ultrasonic_hc-sr04.h"
@@ -126,16 +127,15 @@ static void update_motors(uint8_t dir_ascii)
     uint32_t motors_r_pwm_ns = 1500;
     const uint32_t ROBOT_SPEED = 350;       // Max 500
     
-   
-    dir = (uint8_t)(dir_ascii - '0');      // Black magic convert to numeric
+    dir = (uint8_t)(dir_ascii - '0');       // Black magic convert to numeric
     LOG_DBG("ASCII: %u", dir_ascii);
-    LOG_INF("Int: %u", dir);
+    LOG_DBG("Int: %u", dir);
 
     /* Motor PWM->Speed Reference:
         Max foward = 2000 us
         Max reverse = 1000 us
-        Stop = 1500 us. Dead band [1480-1520] us */
-
+        Stop = 1500 us. Dead band [1480-1520] us 
+    */
     switch(dir)
     {
         case NONE_E:
@@ -175,7 +175,7 @@ static void update_motors(uint8_t dir_ascii)
             motors_r_pwm_ns = PWM_USEC(1500 + ROBOT_SPEED);
             break;
         default:
-            LOG_INF("Controller incorrectly configured. See robot_dir_t definition.");
+            LOG_INF("Controller incorrectly configured. See robot_dir_t enum definition.");
             break;    
     }   
 
@@ -192,8 +192,8 @@ static void update_motors(uint8_t dir_ascii)
         LOG_ERR("Error %d: failed to set pulse width of right motors", error);
         return;
 	}
-    LOG_INF("Left motor set to %u us", motors_l_pwm_ns/1000);
-    LOG_INF("Right motor set to %u us", motors_r_pwm_ns/1000);
+    LOG_DBG("Left motor set to %u us", motors_l_pwm_ns/1000);
+    LOG_DBG("Right motor set to %u us", motors_r_pwm_ns/1000);
     
 } /* update_motors */
 
@@ -214,7 +214,6 @@ static void reset_motors(struct k_timer *timer)
     LOG_INF("Motors turned off (1500 us)");
 
 } /* reset_motors */
-
 
 static void config_dk_leds(void)
 {
@@ -264,11 +263,13 @@ void ultrasonic_thread(void)
 {
     uint32_t dist_mm; 
     int16_t motor_err;
+    int radar_err;
     uint32_t motor_f_pwm_ns = PWM_USEC(1500);
     bool b_dir = 0;
     uint32_t scan_position = 0;
     uint32_t prev_scan_position = 0;
     uint8_t dist_display= 0;
+    uint8_t dist_mm_str[8 + 1] = {'&'};  // 8 digits for distance plus null char
     
     for (;;)
     {
@@ -286,14 +287,25 @@ void ultrasonic_thread(void)
             // Take sensor reading
             dist_mm = sense_distance();
 		    
-            // Map servo position to 1-8 value 
-            scan_position = map(motor_f_pwm_ns, 1000000, 2000000, 1, 8);
-            LOG_DBG("PWM: %lu   Scan: %lu", motor_f_pwm_ns/1000, scan_position);              // Motor PWM (1,000,000 to 2,000,000)
+            // Map servo position to 1-8 value, invert so scan_position [0] is left, [19] is right
+            scan_position = 19 - map(motor_f_pwm_ns, MIN_PULSE_F, MAX_PULSE_F, 0, 19);
+            LOG_DBG("PWM: %u   Scan: %u", motor_f_pwm_ns/1000, scan_position);              // Motor PWM (1,000,000 to 2,000,000)
             
             if (scan_position != prev_scan_position)
             {
-                // Placeholder. Write to screen
-                //LOG_INF("Distance: %u mm, Position: %u, Distance bit field: "BYTE_TO_BINARY_PATTERN, dist_mm, scan_position, BYTE_TO_BINARY(dist_display));
+                // Process and transmit to NUS
+                LOG_INF("Distance: %u mm, Position: %u", dist_mm, scan_position);
+                LOG_DBG("PWM: %u   Scan: %u", motor_f_pwm_ns/1000, scan_position);
+                snprintf(dist_mm_str, sizeof(dist_mm_str), "%u&%d&&&&&&", scan_position, dist_mm);
+                radar_err = bt_nus_send(NULL, dist_mm_str, sizeof(dist_mm_str));
+                if(0 != radar_err)
+			    {
+                    LOG_ERR("Error %d: NUS failed to send data. Check that notfications are enabled.", radar_err);
+		        }
+                else
+                {
+                    LOG_DBG("Transmitted string: %s", dist_mm_str);
+                }
             }
             prev_scan_position = scan_position;
    
@@ -321,7 +333,7 @@ void ultrasonic_thread(void)
             }
 
         }
-        k_sleep(K_MSEC(40));    // 50 ms is a proven value
+        k_sleep(K_MSEC(20));    // 40 ms is a proven value
     }
 }
 
